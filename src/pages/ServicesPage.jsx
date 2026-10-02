@@ -32,7 +32,7 @@ export default function ServicesPage() {
   })
 
   return (
-    <div ref={pageRef}>
+    <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow="Capabilities"
         titleLines={['Investigation &', 'information services.']}
@@ -42,9 +42,13 @@ export default function ServicesPage() {
 
       <nav
         aria-label="On this page"
-        className="sticky top-[72px] z-40 border-b border-white/5 bg-bg-main/90 backdrop-blur-md"
+        className="sticky top-[68px] z-40 max-w-full overflow-hidden border-b border-white/5 bg-bg-main/90 backdrop-blur-md sm:top-[72px]"
       >
-        <Reveal type="fade-up" start="top 98%" className="mx-auto flex max-w-[1440px] gap-4 overflow-x-auto px-5 py-4 md:px-8 lg:px-12">
+        <Reveal
+          type="fade-up"
+          start="top 98%"
+          className="mx-auto flex max-w-[1440px] gap-3 overflow-x-auto overscroll-x-contain px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 sm:px-5 sm:py-4 md:px-8 lg:px-12 [&::-webkit-scrollbar]:hidden"
+        >
           {featuredServices.map((s) => (
             <a
               key={s.id}

@@ -63,7 +63,7 @@ export default function PageHero({
   return (
     <section
       ref={scope}
-      className="relative min-h-[72vh] overflow-hidden border-b border-white/5 bg-bg-main pt-36 md:min-h-[78vh] md:pt-40 lg:pt-44"
+      className="relative min-h-[72vh] overflow-hidden border-b border-white/5 bg-bg-main pt-32 sm:pt-36 md:min-h-[78vh] md:pt-40 lg:pt-44"
     >
       <div className="absolute inset-0">
         {!imgError && image ? (
@@ -87,7 +87,7 @@ export default function PageHero({
 
       <div
         className={[
-          'relative mx-auto flex max-w-[1440px] flex-col justify-end px-5 pb-16 md:px-8 lg:px-12',
+          'relative mx-auto flex min-w-0 max-w-[1440px] flex-col justify-end px-4 pb-12 sm:px-5 sm:pb-16 md:px-8 lg:px-12',
           align === 'center' ? 'items-center text-center' : 'items-start text-left',
         ].join(' ')}
       >
@@ -99,7 +99,7 @@ export default function PageHero({
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="font-display text-[clamp(2.25rem,5vw,4rem)] font-medium leading-[1.05] tracking-[-0.01em] text-text-primary">
+        <h1 className="max-w-full font-display text-[clamp(1.85rem,7vw,4rem)] font-medium leading-[1.05] tracking-[-0.01em] text-text-primary break-words">
           {lines.map((line, i) => (
             <span key={i} className="block overflow-hidden py-0.5">
               <span data-hero-title-line className="block">

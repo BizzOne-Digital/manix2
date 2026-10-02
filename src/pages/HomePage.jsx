@@ -104,7 +104,7 @@ export default function HomePage() {
   }, [reduced])
 
   return (
-    <div ref={pageRef}>
+    <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <section
         data-hero
         className="relative min-h-[100svh] overflow-hidden bg-black hero-light-sweep"
@@ -131,12 +131,12 @@ export default function HomePage() {
 
         <div
           data-hero-float
-          className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col justify-center px-5 pb-28 pt-36 md:px-10 md:pb-32 md:pt-40 lg:px-16 lg:pt-44"
+          className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col justify-center px-4 pb-24 pt-32 sm:px-5 sm:pb-28 sm:pt-36 md:px-10 md:pb-32 md:pt-40 lg:px-16 lg:pt-44"
         >
           <div className="max-w-2xl lg:max-w-3xl">
             <p
               data-hero-eyebrow
-              className="mb-5 text-[10px] font-medium uppercase tracking-[0.45em] text-gold-light/90 md:text-[11px]"
+              className="mb-5 text-[10px] font-medium uppercase tracking-[0.28em] text-gold-light/90 sm:tracking-[0.38em] md:text-[11px] md:tracking-[0.45em]"
             >
               {brand.yearsEyebrow}
             </p>
@@ -163,7 +163,7 @@ export default function HomePage() {
           data-hero-ticker
           className="absolute inset-x-0 bottom-0 z-20 border-t border-gold/45 bg-black/35 backdrop-blur-[2px]"
         >
-          <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-5 py-4 md:px-10 lg:px-16">
+          <div className="mx-auto flex max-w-[1600px] min-w-0 items-center justify-between gap-3 px-4 py-3.5 sm:gap-4 sm:px-5 sm:py-4 md:px-10 lg:px-16">
             <p className="hidden min-w-0 flex-1 truncate text-[9px] font-medium uppercase tracking-[0.32em] text-gold sm:block md:text-[10px] md:tracking-[0.38em]">
               {brand.heroServiceTicker.join('  |  ')}
             </p>
@@ -208,7 +208,7 @@ export default function HomePage() {
               </ButtonLink>
             </Reveal>
           </div>
-          <RevealImage>
+          <RevealImage className="min-w-0">
             <img
               src={siteImages.intro.src}
               alt={siteImages.intro.alt}
@@ -220,9 +220,11 @@ export default function HomePage() {
             <Reveal
               type="rotate-in"
               delay={0.25}
-              className="absolute -bottom-4 -left-4 border border-gold/40 bg-bg-main px-4 py-3 text-xs uppercase tracking-[0.25em] text-gold"
+              className="absolute bottom-0 left-0 sm:-bottom-4 sm:-left-4"
             >
-              Research · Verify · Decide
+              <span className="block border border-gold/40 bg-bg-main px-3 py-2.5 text-[10px] uppercase tracking-[0.2em] text-gold sm:px-4 sm:py-3 sm:text-xs sm:tracking-[0.25em]">
+                Research · Verify · Decide
+              </span>
             </Reveal>
           </RevealImage>
         </div>
@@ -387,14 +389,14 @@ export default function HomePage() {
               </RevealImage>
             </div>
 
-            <RevealStagger className="relative space-y-0 border-l border-gold/30 pl-8 md:pl-10">
+            <RevealStagger className="relative space-y-0 border-l border-gold/30 pl-6 sm:pl-8 md:pl-10">
               {approachSteps.map((item) => (
                 <RevealItem
                   key={item.step}
                   className="relative border-b border-white/5 py-8 first:pt-0 last:border-b-0 last:pb-0"
                 >
                   <span
-                    className="absolute -left-[calc(2rem+5px)] top-8 h-2.5 w-2.5 rounded-full border border-gold bg-bg-panel md:-left-[calc(2.5rem+5px)]"
+                    className="absolute left-0 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-gold bg-bg-panel"
                     aria-hidden="true"
                   />
                   <p className="font-display text-3xl text-gold">{item.step}</p>

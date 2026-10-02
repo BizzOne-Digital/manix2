@@ -13,9 +13,9 @@ function delay(el) {
 function motionForType(type, mobile) {
   switch (type) {
     case 'slide-left':
-      return { x: mobile ? -16 : -28, y: 20 }
+      return mobile ? { y: 20 } : { x: -28, y: 20 }
     case 'slide-right':
-      return { x: mobile ? 16 : 28, y: 20 }
+      return mobile ? { y: 20 } : { x: 28, y: 20 }
     case 'scale-in':
       return { y: 24, scale: 0.98 }
     case 'rotate-in':

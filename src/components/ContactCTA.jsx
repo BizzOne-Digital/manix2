@@ -24,7 +24,9 @@ export default function ContactCTA({
         className,
       ].join(' ')}
     >
-      <div className="pointer-events-none absolute -right-20 top-0 h-full w-1/2 bg-gradient-to-l from-gold/5 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -right-20 top-0 h-full w-1/2 max-w-full bg-gradient-to-l from-gold/5 to-transparent" />
+      </div>
       <img
         src={siteImages.approach.src}
         alt=""
@@ -35,8 +37,8 @@ export default function ContactCTA({
         aria-hidden="true"
       />
       <div className="pointer-events-none absolute inset-0 bg-bg-panel/92" />
-      <div className="relative z-10 mx-auto grid max-w-[1440px] gap-10 px-5 py-20 md:grid-cols-[1.2fr_1fr] md:items-end md:px-8 lg:px-12 lg:py-28">
-        <div>
+      <div className="relative z-10 mx-auto grid min-w-0 max-w-[1440px] gap-10 px-4 py-16 sm:px-5 sm:py-20 md:grid-cols-[1.2fr_1fr] md:items-end md:px-8 lg:px-12 lg:py-28">
+        <div className="min-w-0">
           <Reveal type="slide-left">
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Inquiry</p>
           </Reveal>
@@ -51,7 +53,7 @@ export default function ContactCTA({
             </p>
           </Reveal>
         </div>
-        <Reveal type="slide-right" className="space-y-5 border-l border-gold/30 pl-0 md:pl-10">
+        <Reveal type="slide-right" className="min-w-0 space-y-5 border-t border-gold/30 pt-8 md:border-l md:border-t-0 md:pl-10 md:pt-0">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-text-muted">Email</p>
             <a

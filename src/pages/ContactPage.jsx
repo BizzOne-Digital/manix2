@@ -17,7 +17,7 @@ export default function ContactPage() {
   })
 
   return (
-    <div ref={pageRef}>
+    <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow="Contact"
         title="Let's Discuss Your Matter."
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 <p className="text-xs uppercase tracking-[0.22em] text-text-muted">Email</p>
                 <a
                   href={brand.mailto}
-                  className="mt-2 block font-display text-3xl text-gold transition-opacity hover:opacity-90"
+                  className="mt-2 block break-all font-display text-2xl text-gold transition-opacity hover:opacity-90 sm:break-normal sm:text-3xl"
                 >
                   {brand.email}
                 </a>
@@ -72,7 +72,7 @@ export default function ContactPage() {
             </RevealImage>
           </div>
 
-          <Reveal type="slide-right" className="border border-white/10 bg-bg-panel p-8 md:p-10">
+          <Reveal type="slide-right" className="min-w-0 border border-white/10 bg-bg-panel p-6 sm:p-8 md:p-10">
             <h2 className="font-display text-2xl text-text-primary">Inquiry form</h2>
             <div className="mt-8">
               <InquiryForm />

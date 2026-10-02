@@ -127,8 +127,11 @@ export default function ServiceSection({
             </ButtonLink>
           </div>
 
-          <div data-service-media className="relative">
-            <div className="absolute -inset-3 border border-gold/20" aria-hidden="true" />
+          <div data-service-media className="relative min-w-0">
+            <div
+              className="pointer-events-none absolute inset-0 border border-gold/20 sm:-inset-2 md:-inset-3"
+              aria-hidden="true"
+            />
             {!imgError && image ? (
               <div className="relative overflow-hidden">
                 <img

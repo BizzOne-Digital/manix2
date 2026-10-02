@@ -10,7 +10,7 @@ export default function NotFoundPage() {
   })
 
   return (
-    <section className="flex min-h-[70vh] flex-col items-center justify-center px-5 py-32 text-center">
+    <section className="flex min-h-[70vh] w-full min-w-0 flex-col items-center justify-center overflow-x-clip px-4 py-28 text-center sm:px-5 sm:py-32">
       <p className="text-xs uppercase tracking-[0.35em] text-gold">404</p>
       <h1 className="mt-4 font-display text-[clamp(2.5rem,6vw,4rem)]">Page not found</h1>
       <p className="mt-4 max-w-md text-text-muted">

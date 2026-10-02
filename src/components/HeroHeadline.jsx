@@ -27,7 +27,7 @@ export default function HeroHeadline({ className = '' }) {
     <h1
       ref={ref}
       className={[
-        'font-display text-[clamp(2.5rem,5.5vw,4.25rem)] font-medium leading-[1.08] tracking-[-0.01em]',
+        'font-display text-[clamp(2rem,8vw,4.25rem)] font-medium leading-[1.08] tracking-[-0.01em] break-words',
         className,
       ].join(' ')}
     >

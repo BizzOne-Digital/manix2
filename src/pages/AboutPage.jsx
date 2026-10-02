@@ -37,7 +37,7 @@ export default function AboutPage() {
   })
 
   return (
-    <div ref={pageRef}>
+    <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow={brand.yearsEyebrow}
         titleLines={['A disciplined practice', 'built on research.']}

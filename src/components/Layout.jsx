@@ -19,7 +19,7 @@ export default function Layout() {
       <Header transparentAtTop={transparentHeader} />
       <ScrollProgress />
       <RouteTransition>
-        <main id="main-content">
+        <main id="main-content" className="min-w-0 w-full overflow-x-clip">
           <Outlet />
         </main>
       </RouteTransition>

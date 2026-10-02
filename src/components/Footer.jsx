@@ -39,8 +39,8 @@ export default function Footer() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent"
         aria-hidden="true"
       />
-      <div className="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-gold/[0.04] blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 bottom-0 h-48 w-48 rounded-full bg-gold/[0.03] blur-3xl" />
+      <div className="pointer-events-none absolute left-0 top-0 h-48 w-48 rounded-full bg-gold/[0.04] blur-3xl md:-left-32 md:h-64 md:w-64" />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-40 w-40 rounded-full bg-gold/[0.03] blur-3xl md:-right-24 md:h-48 md:w-48" />
 
       <div className="relative mx-auto max-w-[1600px] px-5 py-14 md:px-10 md:py-16 lg:px-14 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">

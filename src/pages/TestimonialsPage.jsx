@@ -31,7 +31,7 @@ export default function TestimonialsPage() {
   })
 
   return (
-    <div ref={pageRef}>
+    <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow="Testimonials"
         titleLines={['What clients', 'and partners say.']}

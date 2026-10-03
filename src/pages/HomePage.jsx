@@ -355,8 +355,17 @@ export default function HomePage() {
               <p className="text-base leading-relaxed text-text-muted">
                 The team brings together investigative experience and professional perspectives—so
                 research, field work, and communication remain aligned with the decisions you need
-                to make. Nothing on this site establishes an attorney-client relationship.
+                to make. Counsel and licensed associates include barristers, solicitors, and
+                paralegals. Nothing on this site establishes an attorney-client relationship.
               </p>
+            </Reveal>
+            <Reveal type="fade-up" delay={0.18} className="mt-6 inline-block">
+              <Link
+                to="/about#team"
+                className="text-sm text-gold underline-offset-4 hover:underline"
+              >
+                Meet counsel & associates
+              </Link>
             </Reveal>
           </div>
         </div>

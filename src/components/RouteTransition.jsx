@@ -63,7 +63,7 @@ export default function RouteTransition({ children }) {
       <div
         ref={overlayRef}
         aria-hidden="true"
-        className="pointer-events-none fixed inset-y-0 left-0 z-[100] w-full origin-left scale-x-0 bg-gold"
+        className="pointer-events-none fixed inset-y-0 left-0 z-40 w-full origin-left scale-x-0 bg-gold"
       />
       <div ref={contentRef} key={location.pathname} className="page-enter">
         {children}

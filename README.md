@@ -82,7 +82,7 @@ Do not add fabricated reviews. The testimonials page renders this list automatic
 
 ## Contact form behavior
 
-The contact form **does not send email from the server**. It validates input and opens a `mailto:info@manixlegal.com` link (or copies inquiry text via **Copy Inquiry**).
+The contact form **does not send email from the server**. It validates input and opens a `mailto:info@mannixlegal.com` link (or copies inquiry text via **Copy Inquiry**).
 
 ## Accessibility & motion
 

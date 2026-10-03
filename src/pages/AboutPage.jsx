@@ -3,8 +3,10 @@ import PageHero from '../components/PageHero'
 import ContactCTA from '../components/ContactCTA'
 import ButtonLink from '../components/ButtonLink'
 import { HeadlineReveal, Reveal, RevealImage, RevealItem, RevealLine, RevealStagger } from '../components/Reveal'
+import TeamMemberProfile from '../components/TeamMemberProfile'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
+import { teamMembers } from '../data/team'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -128,6 +130,28 @@ export default function AboutPage() {
               </RevealItem>
             ))}
           </RevealStagger>
+        </div>
+      </section>
+
+      <section id="team" className="scroll-mt-28 border-b border-white/5 py-20 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 lg:px-12">
+          <Reveal type="clip-up">
+            <p className="text-xs uppercase tracking-[0.3em] text-gold">Counsel & associates</p>
+          </Reveal>
+          <HeadlineReveal
+            className="mt-3 font-display text-[clamp(2rem,3.5vw,3rem)]"
+            lines={['Partners and professional', 'support on your matter.']}
+          />
+          <Reveal type="fade-up" delay={0.08} className="mt-6 block max-w-3xl text-sm leading-relaxed text-text-muted md:text-base">
+            Our network includes counsel and licensed professionals who work with {brand.name} on
+            litigation, regulatory matters, and client-facing legal services. Profiles below are for
+            general information; engaging a specific professional may require a separate agreement.
+          </Reveal>
+          <div className="mt-12 space-y-10">
+            {teamMembers.map((member) => (
+              <TeamMemberProfile key={member.id} member={member} />
+            ))}
+          </div>
         </div>
       </section>
 

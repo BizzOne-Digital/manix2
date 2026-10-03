@@ -1,13 +1,19 @@
+/** Single source for public contact details (footer, contact page, mailto form). */
+export const brandContact = {
+  email: 'info@mannixlegal.com',
+  mailto: 'mailto:info@mannixlegal.com',
+  /** Display format — do not use raw digits on the site */
+  phone: '(942) 444-9422',
+  phoneTel: 'tel:+19424449422',
+}
+
 export const brand = {
   name: 'Mannix',
   fullName: 'Mannix Investigation & Legal Services',
   logoAlt: 'Mannix Investigations and Legal Services logo',
   logoSrc: '/images/mannix-logo.png',
   tagline: 'Investigations & Legal Services',
-  email: 'info@mannixlegal.com',
-  phone: '(942) 444-9422',
-  phoneTel: 'tel:+19424449422',
-  mailto: 'mailto:info@mannixlegal.com',
+  ...brandContact,
   yearsEyebrow: 'OVER 40 YEARS IN BUSINESS',
   heroServiceTicker: [
     'PROCESS SERVING',

@@ -43,7 +43,7 @@ This app uses client-side routing. Every path must fall back to `index.html` exc
 
 | File | Purpose |
 |------|---------|
-| `src/data/brand.js` | Brand name, logo path, email, phone, disclaimers, optional process-serving rate flag |
+| `src/data/brand.js` | Brand name, logo path, contact (`info@mannixlegal.com`, `(942) 444-9422`), disclaimers, optional process-serving rate flag |
 | `src/data/services.js` | Service copy and anchors |
 | `src/data/navigation.js` | Header/footer links |
 | `src/data/testimonials.js` | Verified testimonials array (empty by default) |

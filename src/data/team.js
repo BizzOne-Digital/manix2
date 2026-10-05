@@ -2,6 +2,20 @@ import { brand } from './brand'
 
 export const teamMembers = [
   {
+    id: 'ziva',
+    name: 'Ziva',
+    credentials: 'Senior Investigator | Forensic Claims & Skip Tracing Specialist',
+    bio: [
+      `With more than 33 years of experience in the insurance industry, Ziva brings an exceptional depth of knowledge and investigative expertise to ${brand.fullName}.`,
+      `Throughout her distinguished career, Ziva has developed extensive experience in the forensic investigation of a wide range of insurance claims, learning to recognize the details, inconsistencies, and subtle indicators that can determine what truly lies beneath the surface of a case.`,
+      `Her greatest strength, however, may be her extraordinary investigative instinct — an ability to know where to look when the evidence appears to be nowhere in sight. That instinct, combined with decades of industry experience, has established Ziva as a highly accomplished specialist in skip tracing and locating individuals.`,
+      `Over the course of her career, Ziva has successfully located individuals across Canada and around the world, often uncovering information and connections that others believed had long since disappeared or been deliberately concealed.`,
+      `Whether tracing a missing individual, investigating a complex claim, or pursuing information buried beneath layers of misinformation, Ziva approaches every assignment with persistence, discretion, analytical precision, and an unwavering determination to find the truth.`,
+      `At ${brand.fullName}, Ziva represents the firm's commitment to combining experience, instinct, investigative methodology, and results — particularly when the answers are difficult to find.`,
+    ],
+    practiceAreas: null,
+  },
+  {
     id: 'jorgen-wong',
     name: 'Jorgen Wong',
     credentials: 'Barrister and Solicitor',

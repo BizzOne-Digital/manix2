@@ -202,9 +202,12 @@ export default function HomePage() {
                 information you need before important decisions.
               </p>
             </Reveal>
-            <Reveal type="scale-in" delay={0.2} className="mt-8 inline-block">
+            <Reveal type="scale-in" delay={0.2} className="mt-8 flex flex-wrap gap-4">
               <ButtonLink to="/about" variant="ghost">
                 About {brand.name}
+              </ButtonLink>
+              <ButtonLink to="/about#founder" variant="ghost">
+                Founder's profile
               </ButtonLink>
             </Reveal>
           </div>

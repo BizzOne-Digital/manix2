@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
+import BackgroundMusic from './BackgroundMusic'
 import Footer from './Footer'
 import Header from './Header'
 import RouteTransition from './RouteTransition'
@@ -24,6 +25,7 @@ export default function Layout() {
         </main>
       </RouteTransition>
       <Footer />
+      <BackgroundMusic />
     </>
   )
 }

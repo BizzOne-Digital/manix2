@@ -16,6 +16,19 @@ export const teamMembers = [
     practiceAreas: null,
   },
   {
+    id: 'kaylee',
+    name: 'Kaylee',
+    credentials: 'Administrator Ambassador & Intelligence Specialist',
+    bio: [
+      `Kaylee plays a vital role in the intelligence and operational infrastructure of ${brand.fullName}. Combining advanced organizational skills, technological expertise, and a strong understanding of human communication, she transforms complex information into clear, actionable intelligence.`,
+      `With a background in Psychology and Communicative Disorders, Kaylee brings a unique analytical perspective to investigations. Her ability to organize large volumes of information, identify critical connections, and assess communication patterns helps support strategic decision-making across a wide range of files.`,
+      `Known for her precision, efficiency, and attention to detail, Kaylee works behind the scenes to ensure investigators have the structure, intelligence, and insights they need to approach complex matters with confidence.`,
+      `Meticulous. Analytical. Technologically adept.`,
+      `Kaylee is an integral force behind the intelligence, organization, and strategic efficiency that drive ${brand.fullName}.`,
+    ],
+    practiceAreas: null,
+  },
+  {
     id: 'jorgen-wong',
     name: 'Jorgen Wong',
     credentials: 'Barrister and Solicitor',

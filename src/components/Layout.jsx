@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import BackgroundMusic from './BackgroundMusic'
+import { MusicToggle } from '../context/MusicContext'
 import Footer from './Footer'
 import Header from './Header'
 import RouteTransition from './RouteTransition'
@@ -25,7 +25,7 @@ export default function Layout() {
         </main>
       </RouteTransition>
       <Footer />
-      <BackgroundMusic />
+      <MusicToggle className="fixed bottom-5 right-5 z-[80] sm:bottom-6 sm:right-6" />
     </>
   )
 }

@@ -15,6 +15,25 @@ export const brand = {
   tagline: 'Investigations & Legal Services',
   ...brandContact,
   yearsEyebrow: 'OVER 40 YEARS IN BUSINESS',
+  whatWeDoHeadline: 'Investigation, process serving & legal support',
+  whatWeDoSummary:
+    'Mannix Investigation & Legal Services helps lawyers, businesses, and individuals locate people, serve documents, verify backgrounds, and investigate assets—with disciplined research and clear reporting across Canada.',
+  coreOfferings: [
+    'Process serving & court filing support',
+    'Skip tracing & locate investigations',
+    'Tenant, applicant & background verification',
+    'Solvency & asset investigations',
+  ],
+  processServersCanada: 18,
+  processServersNote:
+    'Mannix maintains a network of 18 process servers across Canada to support timely, informed service of process.',
+  paralegalSpecializations: [
+    'Landlord and Tenant Board (LTB) matters',
+    'Traffic violations',
+    'Small Claims Court actions',
+  ],
+  paralegalTeamNote:
+    'Our team includes licensed paralegals specializing in Landlord and Tenant Board (LTB) cases, traffic violations, and Small Claims Court actions.',
   heroServiceTicker: [
     'PROCESS SERVING',
     'SKIP TRACING',

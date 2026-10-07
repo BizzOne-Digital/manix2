@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import PageHero from '../components/PageHero'
 import ServiceSection from '../components/ServiceSection'
 import ContactCTA from '../components/ContactCTA'
+import ParalegalServicesNote from '../components/ParalegalServicesNote'
 import { Reveal } from '../components/Reveal'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
@@ -34,11 +35,25 @@ export default function ServicesPage() {
   return (
     <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
-        eyebrow="Capabilities"
-        titleLines={['Investigation &', 'information services.']}
-        description="Four focused service areas—each supported by research, verification, and professional communication."
+        eyebrow="What we do"
+        titleLines={['Investigation, serving,', 'tracing & verification.']}
+        description={brand.whatWeDoSummary}
         image={siteImages.servicesHero}
       />
+
+      <section className="border-b border-white/5 bg-bg-secondary py-12 md:py-16">
+        <div className="mx-auto grid max-w-[1440px] gap-8 px-5 md:grid-cols-2 md:px-8 lg:px-12">
+          <Reveal type="fade-up" className="block border border-gold/30 bg-bg-panel/50 p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-gold">Nationwide coverage</p>
+            <p className="mt-3 text-sm leading-relaxed text-text-muted md:text-base">
+              {brand.processServersNote}
+            </p>
+          </Reveal>
+          <Reveal type="fade-up" delay={0.08} className="block">
+            <ParalegalServicesNote />
+          </Reveal>
+        </div>
+      </section>
 
       <nav
         aria-label="On this page"

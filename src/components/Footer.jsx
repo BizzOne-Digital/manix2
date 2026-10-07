@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 import ButtonLink from './ButtonLink'
 import { brand } from '../data/brand'
 import { featuredServices } from '../data/services'
-import { ctaNav, mainNav } from '../data/navigation'
+import { ctaNav, footerNav } from '../data/navigation'
 
 function FooterNavLink({ to, children, end = false }) {
   return (
@@ -56,7 +56,10 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-text-muted md:text-[15px] md:leading-relaxed">
-              {brand.footerBlurb}
+              {brand.whatWeDoSummary}
+            </p>
+            <p className="mt-3 max-w-md text-xs leading-relaxed text-text-muted">
+              {brand.processServersNote}
             </p>
             <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.35em] text-gold/80">
               {brand.yearsEyebrow}
@@ -72,7 +75,7 @@ export default function Footer() {
                 Navigate
               </p>
               <ul className="space-y-3.5">
-                {mainNav.map((item) => (
+                {footerNav.map((item) => (
                   <li key={item.path}>
                     <FooterNavLink to={item.path} end={item.path === '/'}>
                       {item.label}

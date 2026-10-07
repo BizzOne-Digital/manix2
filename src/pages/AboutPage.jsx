@@ -4,6 +4,7 @@ import ContactCTA from '../components/ContactCTA'
 import ButtonLink from '../components/ButtonLink'
 import { HeadlineReveal, Reveal, RevealImage, RevealItem, RevealLine, RevealStagger } from '../components/Reveal'
 import FounderProfile from '../components/FounderProfile'
+import ParalegalServicesNote from '../components/ParalegalServicesNote'
 import TeamMemberProfile from '../components/TeamMemberProfile'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
@@ -153,6 +154,8 @@ export default function AboutPage() {
             legal services. Profiles below are for
             general information; engaging a specific professional may require a separate agreement.
           </Reveal>
+          <ParalegalServicesNote className="mt-10" />
+
           <div className="mt-12 space-y-10">
             {teamMembers.map((member) => (
               <TeamMemberProfile key={member.id} member={member} />

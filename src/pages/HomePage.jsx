@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import ButtonLink from '../components/ButtonLink'
 import ContactCTA from '../components/ContactCTA'
+import WhatWeDoBanner from '../components/WhatWeDoBanner'
 import HeroHeadline from '../components/HeroHeadline'
 import { ChevronDownIcon } from '../components/HeroVisuals'
 import {
@@ -143,17 +144,19 @@ export default function HomePage() {
             <HeroHeadline />
             <p
               data-hero-support
-              className="mt-6 max-w-lg text-sm font-normal leading-relaxed text-white/85 md:text-base md:leading-relaxed"
+              className="mt-6 max-w-xl text-sm font-normal leading-relaxed text-white/85 md:text-base md:leading-relaxed"
             >
-              Specialized investigation and information gathering to help you make informed
-              decisions.
+              {brand.whatWeDoSummary}
             </p>
             <div data-hero-cta className="mt-9 flex flex-wrap gap-4">
-              <ButtonLink to="/services" showArrow>
-                Explore Our Services
+              <ButtonLink to="/#what-we-do" showArrow>
+                What we do
               </ButtonLink>
-              <ButtonLink to="/contact" variant="secondary" showArrow>
-                Discuss Your Matter
+              <ButtonLink to="/services" variant="secondary" showArrow>
+                All services
+              </ButtonLink>
+              <ButtonLink to="/contact" variant="ghost" showArrow>
+                Contact
               </ButtonLink>
             </div>
           </div>
@@ -180,6 +183,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <WhatWeDoBanner />
 
       <section
         id="intro-section"

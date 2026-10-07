@@ -1,3 +1,5 @@
+import { brand } from './brand'
+
 export const featuredServices = [
   {
     id: 'process-serving',
@@ -46,6 +48,7 @@ export const serviceDetails = [
       'Process serving supported by investigation to locate the subject and establish relevant circumstances before documents are delivered.',
     body: [
       'Effective service often depends on understanding where someone lives, works, or can reliably be reached. Our work combines investigative research with disciplined field coordination so service attempts are informed rather than speculative.',
+      brand.processServersNote,
       'When subjects cannot be located domestically, clients may choose whether to pursue further options. We communicate findings clearly so legal teams can decide next steps without assumptions.',
     ],
     clientSuppliedNote:

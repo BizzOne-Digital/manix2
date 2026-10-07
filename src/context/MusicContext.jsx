@@ -28,58 +28,91 @@ function loadYouTubeIframeApi() {
   return youtubeApiPromise
 }
 
+function createPlayerMount() {
+  const mount = document.createElement('div')
+  mount.setAttribute('aria-hidden', 'true')
+  mount.className = 'pointer-events-none fixed left-0 top-0 h-px w-px overflow-hidden opacity-0'
+  document.body.appendChild(mount)
+  return mount
+}
+
 export function MusicProvider({ children }) {
   const reducedMotion = useReducedMotion()
-  const hostRef = useRef(null)
+  const mountRef = useRef(null)
   const playerRef = useRef(null)
+  const creatingRef = useRef(false)
   const [playing, setPlaying] = useState(false)
   const [error, setError] = useState(false)
 
   const destroyPlayer = useCallback(() => {
-    playerRef.current?.destroy?.()
+    try {
+      playerRef.current?.destroy?.()
+    } catch {
+      /* YT destroy can throw if already torn down */
+    }
     playerRef.current = null
+    creatingRef.current = false
+    mountRef.current?.remove()
+    mountRef.current = null
   }, [])
 
   useEffect(() => () => destroyPlayer(), [destroyPlayer])
 
   const ensurePlayer = useCallback(async () => {
-    if (playerRef.current || error) return playerRef.current
-    await loadYouTubeIframeApi()
-    if (!hostRef.current || !window.YT?.Player) {
+    if (playerRef.current || error || creatingRef.current) return playerRef.current
+    if (reducedMotion) return null
+
+    creatingRef.current = true
+    try {
+      await loadYouTubeIframeApi()
+      if (!window.YT?.Player) {
+        setError(true)
+        return null
+      }
+
+      if (!mountRef.current) {
+        mountRef.current = createPlayerMount()
+      }
+
+      const mount = mountRef.current
+
+      return await new Promise((resolve) => {
+        playerRef.current = new window.YT.Player(mount, {
+          height: '1',
+          width: '1',
+          videoId: backgroundMusic.youtubeVideoId,
+          playerVars: {
+            autoplay: 0,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            iv_load_policy: 3,
+            loop: 1,
+            playlist: backgroundMusic.youtubeVideoId,
+            modestbranding: 1,
+            rel: 0,
+            playsinline: 1,
+          },
+          events: {
+            onReady: (event) => {
+              event.target.setVolume(backgroundMusic.volume)
+              creatingRef.current = false
+              resolve(event.target)
+            },
+            onError: () => {
+              setError(true)
+              creatingRef.current = false
+              resolve(null)
+            },
+          },
+        })
+      })
+    } catch {
       setError(true)
+      creatingRef.current = false
       return null
     }
-
-    return new Promise((resolve) => {
-      playerRef.current = new window.YT.Player(hostRef.current, {
-        height: '1',
-        width: '1',
-        videoId: backgroundMusic.youtubeVideoId,
-        playerVars: {
-          autoplay: 0,
-          controls: 0,
-          disablekb: 1,
-          fs: 0,
-          iv_load_policy: 3,
-          loop: 1,
-          playlist: backgroundMusic.youtubeVideoId,
-          modestbranding: 1,
-          rel: 0,
-          playsinline: 1,
-        },
-        events: {
-          onReady: (event) => {
-            event.target.setVolume(backgroundMusic.volume)
-            resolve(event.target)
-          },
-          onError: () => {
-            setError(true)
-            resolve(null)
-          },
-        },
-      })
-    })
-  }, [error])
+  }, [error, reducedMotion])
 
   const primePlayer = useCallback(() => {
     if (error || reducedMotion) return
@@ -133,18 +166,7 @@ export function MusicProvider({ children }) {
     musicAvailable: !reducedMotion && !error,
   }
 
-  return (
-    <MusicContext.Provider value={value}>
-      {children}
-      {!reducedMotion ? (
-        <div
-          ref={hostRef}
-          className="pointer-events-none fixed left-0 top-0 h-px w-px overflow-hidden opacity-0"
-          aria-hidden="true"
-        />
-      ) : null}
-    </MusicContext.Provider>
-  )
+  return <MusicContext.Provider value={value}>{children}</MusicContext.Provider>
 }
 
 export function useMusic() {

@@ -11,9 +11,8 @@ export default function HeroHeadline({ className = '' }) {
     const lines = ref.current.querySelectorAll('[data-line]')
     gsap.fromTo(
       lines,
-      { opacity: 0, y: 20 },
+      { y: 20, immediateRender: false },
       {
-        opacity: 1,
         y: 0,
         duration: 0.7,
         stagger: 0.1,

@@ -10,7 +10,8 @@ export function hasEnteredSite() {
 
 export function markSiteEntered() {
   sessionStorage.setItem(SITE_ENTERED_KEY, '1')
-  sessionStorage.setItem(SKIP_ROUTE_TRANSITION_KEY, '1')
+  // Survives React Strict Mode double-mount (multiple transition skips).
+  sessionStorage.setItem(SKIP_ROUTE_TRANSITION_KEY, '3')
 }
 
 export default function SiteGate() {

@@ -31,7 +31,7 @@ function revealElement(el, type, mobile, start = DEFAULT_START) {
   const motion = motionForType(type, mobile)
   gsap.fromTo(
     el,
-    { opacity: 0, ...motion },
+    { opacity: 0, ...motion, immediateRender: false },
     {
       opacity: 1,
       x: 0,
@@ -65,7 +65,7 @@ export function initScrollAnimations(root, { mobile = false } = {}) {
     if (!items.length) return
     gsap.fromTo(
       items,
-      { opacity: 0, y: mobile ? 16 : 24 },
+      { opacity: 0, y: mobile ? 16 : 24, immediateRender: false },
       {
         opacity: 1,
         y: 0,
@@ -102,7 +102,7 @@ export function initScrollAnimations(root, { mobile = false } = {}) {
     const img = wrap.querySelector('img')
     gsap.fromTo(
       wrap,
-      { opacity: 0, y: mobile ? 16 : 24 },
+      { opacity: 0, y: mobile ? 16 : 24, immediateRender: false },
       {
         opacity: 1,
         y: 0,
@@ -128,7 +128,7 @@ export function initScrollAnimations(root, { mobile = false } = {}) {
   gsap.utils.toArray('[data-headline-reveal]', root).forEach((headline) => {
     gsap.fromTo(
       headline,
-      { opacity: 0, y: mobile ? 16 : 22 },
+      { opacity: 0, y: mobile ? 16 : 22, immediateRender: false },
       {
         opacity: 1,
         y: 0,
@@ -142,7 +142,7 @@ export function initScrollAnimations(root, { mobile = false } = {}) {
   gsap.utils.toArray('[data-service-card]', root).forEach((card, i) => {
     gsap.fromTo(
       card,
-      { opacity: 0, y: mobile ? 20 : 28 },
+      { opacity: 0, y: mobile ? 20 : 28, immediateRender: false },
       {
         opacity: 1,
         y: 0,

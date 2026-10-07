@@ -20,16 +20,14 @@ export default function RouteTransition({ children }) {
     const overlay = overlayRef.current
     if (!content) return
 
-    if (reduced) {
-      gsap.set(content, { opacity: 1, y: 0, scale: 1 })
-      ScrollTrigger.refresh()
-      return undefined
-    }
+    gsap.set(content, { opacity: 1, y: 0, scale: 1, clearProps: 'transform' })
 
-    const skipTransition = sessionStorage.getItem(SKIP_ROUTE_TRANSITION_KEY) === '1'
-    if (skipTransition) {
-      sessionStorage.removeItem(SKIP_ROUTE_TRANSITION_KEY)
-      gsap.set(content, { opacity: 1, y: 0, scale: 1, clearProps: 'transform' })
+    const skipRemaining = Number.parseInt(
+      sessionStorage.getItem(SKIP_ROUTE_TRANSITION_KEY) || '0',
+      10,
+    )
+    if (skipRemaining > 0) {
+      sessionStorage.setItem(SKIP_ROUTE_TRANSITION_KEY, String(skipRemaining - 1))
       if (overlay) {
         gsap.set(overlay, { scaleX: 0, pointerEvents: 'none' })
       }
@@ -37,31 +35,26 @@ export default function RouteTransition({ children }) {
       return undefined
     }
 
-    gsap.set(content, { opacity: 1, y: 0, scale: 1 })
-    if (!overlay) return undefined
+    if (reduced || !overlay) {
+      ScrollTrigger.refresh()
+      return undefined
+    }
 
     const tl = gsap.timeline({
       onComplete: () => {
-        gsap.set(content, { opacity: 1, y: 0, scale: 1, clearProps: 'transform' })
+        gsap.set(overlay, { scaleX: 0, pointerEvents: 'none' })
         ScrollTrigger.refresh()
       },
     })
 
-    tl.set(overlay, { pointerEvents: 'auto', scaleX: 0, transformOrigin: 'left center' })
-      .to(overlay, { scaleX: 1, duration: 0.3, ease: 'power2.inOut' })
-      .fromTo(
-        content,
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
-        '-=0.12',
-      )
+    tl.set(overlay, { pointerEvents: 'none', scaleX: 0, transformOrigin: 'left center' })
+      .to(overlay, { scaleX: 1, duration: 0.28, ease: 'power2.inOut' })
       .to(overlay, {
         scaleX: 0,
         transformOrigin: 'right center',
-        duration: 0.35,
+        duration: 0.28,
         ease: 'power2.inOut',
       })
-      .set(overlay, { pointerEvents: 'none' })
 
     return () => {
       tl.kill()
@@ -77,7 +70,7 @@ export default function RouteTransition({ children }) {
         aria-hidden="true"
         className="pointer-events-none fixed inset-y-0 left-0 z-40 w-full origin-left scale-x-0 bg-gold"
       />
-      <div ref={contentRef} key={location.pathname} className="page-enter">
+      <div ref={contentRef} className="page-enter">
         {children}
       </div>
     </div>

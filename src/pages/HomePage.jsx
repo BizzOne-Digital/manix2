@@ -82,23 +82,23 @@ export default function HomePage() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '[data-hero-eyebrow]',
-        { opacity: 0, y: 24 },
-        { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', delay: 0.15 },
+        { y: 24, immediateRender: false },
+        { y: 0, duration: 0.9, ease: 'power2.out', delay: 0.15 },
       )
       gsap.fromTo(
         '[data-hero-cta] > *',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, delay: 0.85, ease: 'power2.out' },
+        { y: 20, immediateRender: false },
+        { y: 0, duration: 0.7, stagger: 0.1, delay: 0.85, ease: 'power2.out' },
       )
       gsap.fromTo(
         '[data-hero-support]',
-        { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 0.65, ease: 'power2.out' },
+        { y: 16, immediateRender: false },
+        { y: 0, duration: 0.8, delay: 0.65, ease: 'power2.out' },
       )
       gsap.fromTo(
         '[data-hero-ticker]',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 1.05, ease: 'power2.out' },
+        { y: 20, immediateRender: false },
+        { y: 0, duration: 0.8, delay: 1.05, ease: 'power2.out' },
       )
     }, pageRef)
     return () => ctx.revert()

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SKIP_ROUTE_TRANSITION_KEY } from './SiteGate'
 import { useReducedMotion } from '../hooks/useMedia'
 
 export default function RouteTransition({ children }) {
@@ -22,6 +23,17 @@ export default function RouteTransition({ children }) {
     if (reduced) {
       gsap.set(content, { opacity: 1, y: 0, scale: 1 })
       ScrollTrigger.refresh()
+      return undefined
+    }
+
+    const skipTransition = sessionStorage.getItem(SKIP_ROUTE_TRANSITION_KEY) === '1'
+    if (skipTransition) {
+      sessionStorage.removeItem(SKIP_ROUTE_TRANSITION_KEY)
+      gsap.set(content, { opacity: 1, y: 0, scale: 1, clearProps: 'transform' })
+      if (overlay) {
+        gsap.set(overlay, { scaleX: 0, pointerEvents: 'none' })
+      }
+      requestAnimationFrame(() => ScrollTrigger.refresh())
       return undefined
     }
 

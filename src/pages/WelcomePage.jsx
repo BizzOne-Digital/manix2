@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
@@ -8,18 +9,20 @@ import { usePageMeta } from '../hooks/usePageMeta'
 export default function WelcomePage() {
   const navigate = useNavigate()
   const location = useLocation()
-  const { playMusic, musicAvailable } = useMusic()
+  const { playMusicFromUserGesture, primePlayer, musicAvailable } = useMusic()
+
+  useEffect(() => {
+    if (musicAvailable) primePlayer()
+  }, [musicAvailable, primePlayer])
 
   usePageMeta({
     title: `Welcome | ${brand.fullName}`,
     description: brand.whatWeDoSummary,
   })
 
-  const enterSite = async () => {
+  const enterSite = () => {
     markSiteEntered()
-    if (musicAvailable) {
-      await playMusic()
-    }
+    playMusicFromUserGesture()
     const target = location.state?.from?.pathname
     const safe =
       target && target !== '/welcome' && !target.startsWith('/welcome') ? target : '/'

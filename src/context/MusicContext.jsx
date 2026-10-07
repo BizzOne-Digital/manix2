@@ -81,6 +81,11 @@ export function MusicProvider({ children }) {
     })
   }, [error])
 
+  const primePlayer = useCallback(() => {
+    if (error || reducedMotion) return
+    void ensurePlayer()
+  }, [ensurePlayer, error, reducedMotion])
+
   const playMusic = useCallback(async () => {
     if (error || reducedMotion) return false
     const player = playerRef.current || (await ensurePlayer())
@@ -90,6 +95,19 @@ export function MusicProvider({ children }) {
     setPlaying(true)
     return true
   }, [ensurePlayer, error, reducedMotion])
+
+  /** Call from a click handler — starts playback immediately when the player is ready. */
+  const playMusicFromUserGesture = useCallback(() => {
+    if (error || reducedMotion) return
+    const player = playerRef.current
+    if (player?.playVideo) {
+      player.playVideo()
+      player.setVolume?.(backgroundMusic.volume)
+      setPlaying(true)
+      return
+    }
+    void playMusic()
+  }, [error, playMusic, reducedMotion])
 
   const pauseMusic = useCallback(() => {
     playerRef.current?.pauseVideo?.()
@@ -104,7 +122,16 @@ export function MusicProvider({ children }) {
     await playMusic()
   }, [pauseMusic, playMusic, playing])
 
-  const value = { playing, error, playMusic, pauseMusic, toggleMusic, musicAvailable: !reducedMotion && !error }
+  const value = {
+    playing,
+    error,
+    playMusic,
+    playMusicFromUserGesture,
+    primePlayer,
+    pauseMusic,
+    toggleMusic,
+    musicAvailable: !reducedMotion && !error,
+  }
 
   return (
     <MusicContext.Provider value={value}>

@@ -1,5 +1,5 @@
-import { Link, useLocation } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { useRef } from 'react'
 import PageHero from '../components/PageHero'
 import ServiceSection from '../components/ServiceSection'
 import ContactCTA from '../components/ContactCTA'
@@ -12,20 +12,8 @@ import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function ServicesPage() {
-  const location = useLocation()
   const pageRef = useRef(null)
   useScrollAnimations(pageRef)
-
-  useEffect(() => {
-    if (!location.hash) return
-    const id = location.hash.replace('#', '')
-    const el = document.getElementById(id)
-    if (el) {
-      requestAnimationFrame(() => {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      })
-    }
-  }, [location.hash])
 
   usePageMeta({
     title: `Services | ${brand.fullName}`,

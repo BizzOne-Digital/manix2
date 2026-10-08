@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { MusicToggle } from '../context/MusicContext'
+import { useHashScroll } from '../hooks/useHashScroll'
 import Footer from './Footer'
 import Header from './Header'
 import RouteTransition from './RouteTransition'
@@ -8,6 +9,7 @@ import ScrollProgress from './ScrollProgress'
 export default function Layout() {
   const location = useLocation()
   const transparentHeader = location.pathname === '/'
+  useHashScroll()
 
   return (
     <>

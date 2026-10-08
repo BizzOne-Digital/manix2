@@ -65,7 +65,7 @@ const approachSteps = [
 
 export default function HomePage() {
   usePageMeta({
-    title: `${brand.fullName} | Investigation & Legal Services`,
+    title: brand.fullName,
     description:
       'Celebrated and award-winning investigators offering specialized research, verification, and information gathering.',
   })
@@ -207,12 +207,15 @@ export default function HomePage() {
                 information you need before important decisions.
               </p>
             </Reveal>
-            <Reveal type="scale-in" delay={0.2} className="mt-8 flex flex-wrap gap-4">
+            <Reveal type="scale-in" delay={0.2} className="mt-8 flex flex-wrap gap-3">
               <ButtonLink to="/about" variant="ghost">
-                About {brand.name}
+                About the firm
               </ButtonLink>
               <ButtonLink to="/about#founder" variant="ghost">
-                Founder's profile
+                Founder&apos;s bio
+              </ButtonLink>
+              <ButtonLink to="/about#team" variant="ghost">
+                Team bios
               </ButtonLink>
             </Reveal>
           </div>

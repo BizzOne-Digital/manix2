@@ -9,15 +9,15 @@ export const brandContact = {
 
 export const brand = {
   name: 'Mannix',
-  fullName: 'Mannix Investigation & Legal Services',
-  logoAlt: 'Mannix Investigations and Legal Services logo',
+  fullName: 'Mannix Investigations & Legal Services',
+  logoAlt: 'Mannix Investigations & Legal Services logo',
   logoSrc: '/images/mannix-logo.png',
   tagline: 'Investigations & Legal Services',
   ...brandContact,
   yearsEyebrow: 'OVER 40 YEARS IN BUSINESS',
   whatWeDoHeadline: 'Investigation, process serving & legal support',
   whatWeDoSummary:
-    'Mannix Investigation & Legal Services helps lawyers, businesses, and individuals locate people, serve documents, verify backgrounds, and investigate assets—with disciplined research and clear reporting across Canada.',
+    'Mannix Investigations & Legal Services helps lawyers, businesses, and individuals locate people, serve documents, verify backgrounds, and investigate assets—with disciplined research and clear reporting across Canada.',
   coreOfferings: [
     'Process serving & court filing support',
     'Skip tracing & locate investigations',

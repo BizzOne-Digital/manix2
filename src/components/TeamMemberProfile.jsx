@@ -2,7 +2,10 @@ import { Reveal, RevealItem, RevealStagger } from './Reveal'
 
 export default function TeamMemberProfile({ member }) {
   return (
-    <article className="border border-white/10 bg-bg-panel/40 p-6 sm:p-8 md:p-10">
+    <article
+      id={member.id}
+      className="scroll-mt-28 border border-white/10 bg-bg-panel/40 p-6 sm:p-8 md:p-10"
+    >
       <Reveal type="fade-up">
         <h3 className="font-display text-2xl text-text-primary md:text-3xl">{member.name}</h3>
         <p className="mt-2 text-sm font-medium uppercase tracking-[0.2em] text-gold">

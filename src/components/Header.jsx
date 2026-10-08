@@ -2,8 +2,46 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { brand } from '../data/brand'
-import { ctaNav, mainNav } from '../data/navigation'
+import { aboutMenu, ctaNav, mainNav } from '../data/navigation'
 import { useHeaderScroll } from '../hooks/useHeaderScroll'
+
+function AboutDesktopNav({ transparent }) {
+  const location = useLocation()
+  const isAbout = location.pathname === '/about'
+
+  return (
+    <div className="group relative">
+      <NavLink to="/about">
+        {({ isActive }) => (
+          <NavLinkContent label="About & team" isActive={isActive || isAbout} transparent={transparent} />
+        )}
+      </NavLink>
+      <div
+        className="pointer-events-none absolute left-1/2 top-full z-[120] hidden w-[min(100vw-2rem,20rem)] -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-200 group-hover:pointer-events-auto group-hover:block group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:block group-focus-within:opacity-100"
+      >
+        <ul
+          className="max-h-[min(70vh,28rem)] overflow-y-auto border border-white/10 bg-bg-main py-2 shadow-2xl"
+          role="menu"
+        >
+          {aboutMenu.map((item) => (
+            <li key={item.path} role="none">
+              <Link
+                to={item.path}
+                role="menuitem"
+                className="block px-4 py-2.5 transition-colors hover:bg-white/5"
+              >
+                <span className="block text-sm font-medium text-text-primary">{item.label}</span>
+                {item.hint ? (
+                  <span className="mt-0.5 block text-xs text-text-muted line-clamp-2">{item.hint}</span>
+                ) : null}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
 
 function NavLinkContent({ label, isActive, transparent }) {
   return (
@@ -106,22 +144,52 @@ export default function Header({ transparentAtTop = false }) {
                 className="flex flex-col gap-5 overflow-y-auto overscroll-contain"
                 aria-label="Mobile primary"
               >
-                {mainNav.map((item) => (
-                  <NavLink
-                    key={item.path}
-                    to={item.path}
-                    end={item.path === '/'}
-                    onClick={closeMenu}
-                    className={({ isActive }) =>
-                      [
-                        'font-display text-2xl text-text-primary sm:text-3xl',
-                        isActive ? 'text-gold' : '',
-                      ].join(' ')
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                ))}
+                {mainNav.map((item) =>
+                  item.menu ? (
+                    <div key={item.path} className="flex flex-col gap-4">
+                      <NavLink
+                        to={item.path}
+                        onClick={closeMenu}
+                        className={({ isActive }) =>
+                          [
+                            'font-display text-2xl text-text-primary sm:text-3xl',
+                            isActive ? 'text-gold' : '',
+                          ].join(' ')
+                        }
+                      >
+                        {item.label}
+                      </NavLink>
+                      <ul className="space-y-3 border-l border-gold/30 pl-4">
+                        {aboutMenu.map((sub) => (
+                          <li key={sub.path}>
+                            <Link
+                              to={sub.path}
+                              onClick={closeMenu}
+                              className="block text-base text-text-muted transition-colors hover:text-gold sm:text-lg"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      end={item.path === '/'}
+                      onClick={closeMenu}
+                      className={({ isActive }) =>
+                        [
+                          'font-display text-2xl text-text-primary sm:text-3xl',
+                          isActive ? 'text-gold' : '',
+                        ].join(' ')
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  ),
+                )}
                 <Link
                   to={ctaNav.path}
                   onClick={closeMenu}
@@ -161,13 +229,17 @@ export default function Header({ transparentAtTop = false }) {
             className="hidden items-center justify-center gap-6 lg:flex xl:gap-10"
             aria-label="Primary"
           >
-            {mainNav.map((item) => (
-              <NavLink key={item.path} to={item.path} end={item.path === '/'}>
-                {({ isActive }) => (
-                  <NavLinkContent label={item.label} isActive={isActive} transparent={transparent} />
-                )}
-              </NavLink>
-            ))}
+            {mainNav.map((item) =>
+              item.menu ? (
+                <AboutDesktopNav key={item.path} transparent={transparent} />
+              ) : (
+                <NavLink key={item.path} to={item.path} end={item.path === '/'}>
+                  {({ isActive }) => (
+                    <NavLinkContent label={item.label} isActive={isActive} transparent={transparent} />
+                  )}
+                </NavLink>
+              ),
+            )}
           </nav>
 
           <div className="relative z-[202] flex min-w-0 items-center justify-self-end gap-2 sm:gap-3">

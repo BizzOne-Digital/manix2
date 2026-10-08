@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import AboutPeopleNav from '../components/AboutPeopleNav'
 import PageHero from '../components/PageHero'
 import ContactCTA from '../components/ContactCTA'
 import ButtonLink from '../components/ButtonLink'
@@ -48,6 +49,12 @@ export default function AboutPage() {
         description={`${brand.fullName} assembles specialists across investigation and information gathering for clients who need clarity before they act.`}
         image={siteImages.aboutHero}
       />
+
+      <section className="border-b border-white/5 py-10 md:py-12">
+        <div className="mx-auto max-w-[1440px] px-5 lg:px-12">
+          <AboutPeopleNav />
+        </div>
+      </section>
 
       <section className="border-b border-white/5 py-20 md:py-28">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 lg:grid-cols-2 lg:items-center lg:px-12">

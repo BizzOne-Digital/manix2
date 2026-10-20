@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
-import { featuredServices } from '../data/services'
 import { brand } from '../data/brand'
+import { submitBooking } from '../lib/adminApi'
+import { useServicesContent } from '../hooks/useServicesContent'
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -33,6 +34,7 @@ function buildPlainInquiry(form) {
 }
 
 export default function InquiryForm() {
+  const { featuredServices } = useServicesContent()
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -42,6 +44,7 @@ export default function InquiryForm() {
   })
   const [errors, setErrors] = useState({})
   const [copyState, setCopyState] = useState('idle')
+  const [submitState, setSubmitState] = useState('idle')
 
   const serviceOptions = useMemo(
     () => [{ value: '', label: 'Select a service (optional)' }, ...featuredServices.map((s) => ({ value: s.title, label: s.title })), { value: 'General inquiry', label: 'General inquiry' }],
@@ -58,11 +61,17 @@ export default function InquiryForm() {
     return Object.keys(next).length === 0
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (!validate()) return
-    const mailto = buildMailto(form)
-    window.location.href = mailto
+    setSubmitState('sending')
+    try {
+      await submitBooking(form)
+      setSubmitState('sent')
+    } catch {
+      setSubmitState('idle')
+      window.location.href = buildMailto(form)
+    }
   }
 
   const onCopy = async () => {
@@ -96,10 +105,17 @@ export default function InquiryForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-6" noValidate>
-      <p className="text-sm leading-relaxed text-text-muted">
-        This form opens your email application. Send the prepared email there to complete your
-        inquiry.
-      </p>
+      {submitState === 'sent' ? (
+        <p className="text-sm leading-relaxed text-gold-light" role="status">
+          Thank you — your inquiry was received. We will review it and respond using the contact
+          details you provided.
+        </p>
+      ) : (
+        <p className="text-sm leading-relaxed text-text-muted">
+          Submit your inquiry here. If online delivery is unavailable, your email app will open as
+          a backup.
+        </p>
+      )}
       <p className="text-xs leading-relaxed text-text-muted">
         Please do not include sensitive documents or confidential case details in an initial
         inquiry.
@@ -179,7 +195,7 @@ export default function InquiryForm() {
           type="submit"
           className="rounded-sm btn-gold-fill px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-bg-main transition-[filter] hover:brightness-105"
         >
-          Prepare Email
+          {submitState === 'sending' ? 'Sending…' : 'Submit inquiry'}
         </button>
         <button
           type="button"

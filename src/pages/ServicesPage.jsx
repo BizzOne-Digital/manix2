@@ -7,12 +7,14 @@ import ParalegalServicesNote from '../components/ParalegalServicesNote'
 import { Reveal } from '../components/Reveal'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
-import { featuredServices, serviceDetails } from '../data/services'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
+import { useServicesContent } from '../hooks/useServicesContent'
+import { resolveServiceImageMeta } from '../lib/resolveImageSrc'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function ServicesPage() {
   const pageRef = useRef(null)
+  const { featuredServices, serviceDetails } = useServicesContent()
   useScrollAnimations(pageRef)
 
   usePageMeta({
@@ -72,7 +74,7 @@ export default function ServicesPage() {
           title={service.title}
           summary={service.summary}
           body={service.body}
-          image={siteImages[service.imageKey]}
+          image={resolveServiceImageMeta(service)}
           reverse={index % 2 === 1}
           clientSuppliedNote={service.clientSuppliedNote}
           showClientRate={service.id === 'process-serving'}

@@ -80,9 +80,45 @@ export const testimonials = [
 
 Do not add fabricated reviews. The testimonials page renders this list automatically.
 
+## Admin portal (services, testimonials, bookings)
+
+URL: **`/admin/login`** (password from `ADMIN_PASSWORD`).
+
+| Area | What you can do |
+|------|-----------------|
+| **Services** | Add / edit / delete services; upload images (stored in MongoDB, not on disk) |
+| **Testimonials** | Add / edit / delete quotes |
+| **Bookings** | Review contact-form inquiries; mark as reviewed (read-only workflow) |
+
+### Environment (Vercel)
+
+Set in the Vercel project:
+
+- `MONGODB_URI` — MongoDB Atlas connection string  
+- `ADMIN_PASSWORD` — admin login password  
+- `SESSION_SECRET` — random string for signed session cookies  
+
+Copy `.env.example` for local use.
+
+### Local full stack (API + Vite)
+
+```bash
+npm run dev:full   # vercel dev — serves /api and proxies the Vite app
+```
+
+Or run `vite` alone: `/api` calls need `vercel dev` on port 3000 (see `vite.config.js` proxy).
+
+### Image uploads (serverless-safe)
+
+- `POST /api/upload` (admin) — `FormData`: `file`, `folder` (`products` \| `gallery` \| `pages` \| `misc`)  
+- Public URL: `/api/uploads/{folder}/{filename}` (served from MongoDB `StoredUpload`)  
+- Service records store only the URL string; replacing/removing images deletes the Mongo blob when saved.
+
+Static fallbacks in `src/data/*.js` apply when the API is unavailable.
+
 ## Contact form behavior
 
-The contact form **does not send email from the server**. It validates input and opens a `mailto:info@mannixlegal.com` link (or copies inquiry text via **Copy Inquiry**).
+Submissions are saved to MongoDB as **bookings** when the API is configured. If the API fails, the form falls back to `mailto:info@mannixlegal.com`. **Copy Inquiry** still works offline.
 
 ## Accessibility & motion
 

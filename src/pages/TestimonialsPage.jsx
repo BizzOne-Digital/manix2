@@ -10,19 +10,21 @@ import {
   RevealStagger,
 } from '../components/Reveal'
 import { brand } from '../data/brand'
-import { featuredServices } from '../data/services'
-import {
-  testimonials,
-  testimonialsAreSamples,
-  testimonialsEmptyMessage,
-  testimonialsSampleNotice,
-} from '../data/testimonials'
+import { testimonialsEmptyMessage } from '../data/testimonials'
+import { useServicesContent } from '../hooks/useServicesContent'
+import { useTestimonialsContent } from '../hooks/useTestimonialsContent'
 import { siteImages } from '../data/images'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function TestimonialsPage() {
   const pageRef = useRef(null)
+  const { featuredServices } = useServicesContent()
+  const {
+    testimonials,
+    testimonialsAreSamples,
+    sampleNotice: testimonialsSampleNotice,
+  } = useTestimonialsContent()
   useScrollAnimations(pageRef)
 
   usePageMeta({

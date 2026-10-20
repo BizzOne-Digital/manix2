@@ -16,7 +16,8 @@ import {
 } from '../components/Reveal'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
-import { featuredServices } from '../data/services'
+import { useServicesContent } from '../hooks/useServicesContent'
+import { resolveServiceImageMeta } from '../lib/resolveImageSrc'
 import { useHeroParallax, useScrollAnimations } from '../hooks/useScrollAnimations'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { useReducedMotion } from '../hooks/useMedia'
@@ -64,6 +65,8 @@ const approachSteps = [
 ]
 
 export default function HomePage() {
+  const { featuredServices } = useServicesContent()
+
   usePageMeta({
     title: brand.fullName,
     description:
@@ -261,7 +264,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {featuredServices.map((service) => {
-              const cardImage = siteImages[service.imageKey]
+              const cardImage = resolveServiceImageMeta(service)
               return (
               <Link
                 key={service.id}

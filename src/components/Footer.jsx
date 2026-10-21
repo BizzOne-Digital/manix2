@@ -49,9 +49,9 @@ export default function Footer() {
               <img
                 src={brand.logoSrc}
                 alt={brand.logoAlt}
-                width={200}
-                height={72}
-                className="h-14 w-auto max-w-[200px] object-contain object-left md:h-[3.75rem]"
+                width={280}
+                height={100}
+                className="h-auto w-full max-w-[min(280px,75vw)] object-contain object-left md:max-w-[300px]"
                 loading="lazy"
               />
             </Link>

@@ -12,6 +12,7 @@ export const brand = {
   fullName: 'Mannix Investigation & Legal Services',
   logoAlt: 'Mannix Investigation & Legal Services logo',
   logoSrc: '/images/mannix-logo.png',
+  faviconSrc: '/favicon.png',
   tagline: 'Investigation & Legal Services',
   ...brandContact,
   yearsEyebrow: 'OVER 40 YEARS IN BUSINESS',

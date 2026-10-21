@@ -219,9 +219,9 @@ export default function Header({ transparentAtTop = false }) {
             <img
               src={brand.logoSrc}
               alt={brand.logoAlt}
-              width={240}
-              height={88}
-              className="h-12 w-auto max-w-[min(220px,46vw)] object-contain object-left transition-transform duration-500 group-hover:scale-[1.02] sm:h-[4.5rem] md:h-20 md:max-w-[min(240px,52vw)]"
+              width={320}
+              height={120}
+              className="h-11 w-auto max-w-[min(280px,58vw)] object-contain object-left transition-transform duration-500 group-hover:scale-[1.02] sm:h-14 md:h-16 md:max-w-[min(300px,42vw)]"
             />
           </Link>
 

@@ -8,10 +8,10 @@ export const teamMembers = [
     bio: [
       `With more than 33 years of experience in the insurance industry, Ziva brings an exceptional depth of knowledge and investigative expertise to ${brand.fullName}.`,
       `Throughout her distinguished career, Ziva has developed extensive experience in the forensic investigation of a wide range of insurance claims, learning to recognize the details, inconsistencies, and subtle indicators that can determine what truly lies beneath the surface of a case.`,
-      `Her greatest strength, however, may be her extraordinary investigative instinct — an ability to know where to look when the evidence appears to be nowhere in sight. That instinct, combined with decades of industry experience, has established Ziva as a highly accomplished specialist in skip tracing and locating individuals.`,
+      `Her greatest strength, however, may be her extraordinary investigative instinct, an ability to know where to look when the evidence appears to be nowhere in sight. That instinct, combined with decades of industry experience, has established Ziva as a highly accomplished specialist in skip tracing and locating individuals.`,
       `Over the course of her career, Ziva has successfully located individuals across Canada and around the world, often uncovering information and connections that others believed had long since disappeared or been deliberately concealed.`,
       `Whether tracing a missing individual, investigating a complex claim, or pursuing information buried beneath layers of misinformation, Ziva approaches every assignment with persistence, discretion, analytical precision, and an unwavering determination to find the truth.`,
-      `At ${brand.fullName}, Ziva represents the firm's commitment to combining experience, instinct, investigative methodology, and results — particularly when the answers are difficult to find.`,
+      `At ${brand.fullName}, Ziva represents the firm's commitment to combining experience, instinct, investigative methodology, and results, particularly when the answers are difficult to find.`,
     ],
     practiceAreas: null,
   },
@@ -29,21 +29,21 @@ export const teamMembers = [
     practiceAreas: null,
   },
   {
-    id: 'jorgen-wong',
-    name: 'Jorgen Wong',
-    credentials: 'Barrister and Solicitor',
+    id: 'jorgen',
+    name: 'Jorgen',
+    credentials: 'Barrister And Solicitor',
     bio: [
-      `Jorgen Wong is a Toronto lawyer who specializes in complex legislative and regulatory litigation. He began his career as a securities regulator and holds a commerce degree from the University of Toronto and a law degree from Osgoode Hall Law School. He understands how regulators investigate, what they need to prove, and where files are won or lost.`,
+      `Jorgen is a Toronto lawyer who specializes in complex legislative and regulatory litigation. He began his career as a securities regulator and holds a commerce degree from the University of Toronto and a law degree from Osgoode Hall Law School. He understands how regulators investigate, what they need to prove, and where files are won or lost.`,
       `His practice includes civil litigation, licensing and bylaw enforcement, criminal and provincial offences defence, and immigration. Jorgen works with ${brand.fullName} as counsel on commercial matters, alongside its process serving, court filing, and investigative support.`,
     ],
     practiceAreas: null,
   },
   {
-    id: 'avery-lakics',
-    name: 'Avery Lakics',
-    credentials: 'Licensed Paralegal and Notary Public',
+    id: 'avery',
+    name: 'Avery',
+    credentials: 'Licensed Paralegal And Notary Public',
     bio: [
-      `Avery Lakics is a licensed paralegal and Notary Public dedicated to providing clear, practical, and client-focused legal guidance. Since earning his license in 2025 following graduation from George Brown College, Avery has built a diverse practice. While initially specializing in Provincial Offences Act matters, he has expanded his expertise to include residential tenancy law, summary criminal defence, and tribunal proceedings.`,
+      `Avery is a licensed paralegal and Notary Public dedicated to providing clear, practical, and client-focused legal guidance. Since earning his license in 2025 following graduation from George Brown College, Avery has built a diverse practice. While initially specializing in Provincial Offences Act matters, he has expanded his expertise to include residential tenancy law, summary criminal defence, and tribunal proceedings.`,
       `Avery is committed to demystifying the legal process and ensuring clients understand their options every step of the way.`,
     ],
     practiceAreas: [
@@ -57,7 +57,7 @@ export const teamMembers = [
           'Defence representation for individuals charged under provincial legislation and bylaws.',
       },
       {
-        title: 'Landlord and Tenant Matters',
+        title: 'Landlord And Tenant Matters',
         description:
           'Representation of both landlords and tenants in applications and proceedings before the Landlord and Tenant Board.',
       },
@@ -75,7 +75,7 @@ export const teamMembers = [
         description: 'Representation in proceedings before administrative tribunals.',
       },
       {
-        title: 'Notary and Commissioner Services',
+        title: 'Notary And Commissioner Services',
         description: 'Notary Public and commissioning of affidavits and other documents.',
       },
     ],

@@ -64,8 +64,8 @@ export function HeadlineReveal({ as: Tag = 'h2', className = '', lines }) {
   return (
     <Tag data-headline-reveal className={className}>
       {lines.map((line) => (
-        <span key={line} className="block overflow-hidden py-0.5">
-          <span data-headline-line className="block">
+        <span key={line} className="block overflow-visible py-1.5">
+          <span data-headline-line className="block leading-[1.2] pb-0.5">
             {line}
           </span>
         </span>

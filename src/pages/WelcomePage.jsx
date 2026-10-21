@@ -85,8 +85,8 @@ export default function WelcomePage() {
           </p>
         ) : null}
 
-        <p className="mt-8 max-w-md text-[11px] leading-relaxed text-text-muted">
-          {brand.paralegalTeamNote}
+        <p className="mt-8 max-w-md text-sm leading-relaxed text-text-muted">
+          {brand.paralegalIntro}
         </p>
       </div>
     </div>

@@ -5,6 +5,7 @@ import ButtonLink from '../components/ButtonLink'
 import ContactCTA from '../components/ContactCTA'
 import WhatWeDoBanner from '../components/WhatWeDoBanner'
 import HeroHeadline from '../components/HeroHeadline'
+import HeroServiceTicker from '../components/HeroServiceTicker'
 import { ChevronDownIcon } from '../components/HeroVisuals'
 import {
   HeadlineReveal,
@@ -22,45 +23,37 @@ import { useHeroParallax, useScrollAnimations } from '../hooks/useScrollAnimatio
 import { usePageMeta } from '../hooks/usePageMeta'
 import { useReducedMotion } from '../hooks/useMedia'
 
-const audiences = [
-  {
-    title: 'Community members',
-    copy: 'Individuals who need verified information before personal, property, or financial decisions.',
-  },
-  {
-    title: 'Lawyers & legal professionals',
-    copy: 'Counsel and firms seeking disciplined investigation support and clear reporting.',
-  },
-  {
-    title: 'Mortgage & financial professionals',
-    copy: 'Lenders and advisors assessing applicants, investors, and associated risk factors.',
-  },
-  {
-    title: 'Tenants, applicants & buyers',
-    copy: 'Clients evaluating people and entities involved in tenancy, purchase, or investment matters.',
-  },
+const professions = [
+  { title: 'Lawyers', copy: 'Counsel and firms seeking disciplined investigation support and clear reporting.' },
+  { title: 'Paralegals', copy: 'Licensed professionals supporting tribunal, tenancy, and court-related matters.' },
+  { title: 'Mortgage Brokers', copy: 'Lenders and brokers assessing applicants, investors, and associated risk factors.' },
+  { title: 'Real Estate Professionals', copy: 'Agents and advisors who need verified background on people and properties.' },
+  { title: 'Landlords', copy: 'Owners evaluating tenants, applicants, and compliance-related information.' },
+  { title: 'Tenants', copy: 'Renters seeking clarity on disputes, applications, and related records.' },
+  { title: 'Financial Advisors', copy: 'Professionals assessing solvency, assets, and financial relationships.' },
+  { title: 'Community Members', copy: 'Individuals who need verified information before personal or financial decisions.' },
 ]
 
 const approachSteps = [
   {
-    step: '01',
-    title: 'Understand the matter',
+    step: '1',
+    title: 'Understand The Matter',
     copy: 'We clarify objectives, constraints, and what decisions the information should support.',
   },
   {
-    step: '02',
-    title: 'Research relevant information',
+    step: '2',
+    title: 'Research Relevant Information',
     copy: 'Persistent inquiry across lawful sources, records, and verifiable leads.',
   },
   {
-    step: '03',
-    title: 'Verify the findings',
+    step: '3',
+    title: 'Verify The Findings',
     copy: 'Cross-checking and independent confirmation before conclusions are drawn.',
   },
   {
-    step: '04',
-    title: 'Communicate useful information',
-    copy: 'Professional reporting structured for practical use—not speculation.',
+    step: '4',
+    title: 'Communicate Useful Information',
+    copy: 'Professional reporting structured for practical use, not speculation.',
   },
 ]
 
@@ -140,9 +133,12 @@ export default function HomePage() {
           <div className="max-w-2xl lg:max-w-3xl">
             <p
               data-hero-eyebrow
-              className="mb-5 text-[10px] font-medium uppercase tracking-[0.28em] text-gold-light/90 sm:tracking-[0.38em] md:text-[11px] md:tracking-[0.45em]"
+              className="mb-2 text-[11px] font-medium uppercase tracking-[0.28em] text-gold-light/90 sm:tracking-[0.38em] md:text-xs md:tracking-[0.45em]"
             >
               {brand.yearsEyebrow}
+            </p>
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-gold/95 sm:text-base md:text-lg">
+              {brand.heroAccolade}
             </p>
             <HeroHeadline />
             <p
@@ -169,13 +165,8 @@ export default function HomePage() {
           data-hero-ticker
           className="absolute inset-x-0 bottom-0 z-20 border-t border-gold/45 bg-black/35 backdrop-blur-[2px]"
         >
-          <div className="mx-auto flex max-w-[1600px] min-w-0 items-center justify-between gap-3 px-4 py-3.5 sm:gap-4 sm:px-5 sm:py-4 md:px-10 lg:px-16">
-            <p className="hidden min-w-0 flex-1 truncate text-[9px] font-medium uppercase tracking-[0.32em] text-gold sm:block md:text-[10px] md:tracking-[0.38em]">
-              {brand.heroServiceTicker.join('  |  ')}
-            </p>
-            <p className="min-w-0 flex-1 text-[8px] font-medium uppercase leading-relaxed tracking-[0.22em] text-gold sm:hidden">
-              {brand.heroServiceTicker.slice(0, 2).join(' · ')}
-            </p>
+          <div className="mx-auto flex max-w-[1600px] min-w-0 items-center justify-between gap-4 px-4 py-3.5 sm:gap-6 sm:px-5 sm:py-4 md:px-10 lg:px-16">
+            <HeroServiceTicker />
             <a
               href="#intro-section"
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/80 text-gold transition-colors hover:border-gold hover:bg-gold/10"
@@ -206,7 +197,7 @@ export default function HomePage() {
             <Reveal type="blur-in" delay={0.15} className="mt-6 block">
               <p className="text-base leading-relaxed text-text-muted">
                 {brand.fullName} brings together specialists in investigation and information
-                gathering—with an emphasis on research, persistence, verification, and the
+                gathering, with an emphasis on research, persistence, verification, and the
                 information you need before important decisions.
               </p>
             </Reveal>
@@ -319,22 +310,22 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-bg-secondary/88" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
           <Reveal type="clip-up">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Who we help</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold">Who We Help</p>
           </Reveal>
           <HeadlineReveal
-            className="mt-3 max-w-2xl font-display text-[clamp(2rem,4vw,3rem)]"
-            lines={['Professionals and community members', 'seeking verified information.']}
+            className="mt-3 max-w-2xl font-display text-[clamp(2.125rem,4.5vw,3.25rem)]"
+            lines={['Professions We Serve']}
           />
           <RevealStagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {audiences.map((item) => (
+            {professions.map((item) => (
               <RevealItem
                 key={item.title}
                 className="group border-t border-gold/40 pt-6 transition-colors hover:border-gold"
               >
-                <h3 className="font-display text-xl text-text-primary transition-transform duration-300 group-hover:translate-x-1">
+                <h3 className="font-display text-xl text-text-primary transition-transform duration-300 group-hover:translate-x-1 md:text-2xl">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-muted">{item.copy}</p>
+                <p className="mt-3 text-base leading-relaxed text-text-muted">{item.copy}</p>
               </RevealItem>
             ))}
           </RevealStagger>
@@ -355,30 +346,25 @@ export default function HomePage() {
           </RevealImage>
           <div className="order-1 flex flex-col justify-center md:order-2">
             <Reveal type="slide-right">
-              <p className="text-xs uppercase tracking-[0.3em] text-gold">Partners & associates</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-gold">Partners & Associates</p>
             </Reveal>
             <RevealLine className="my-5 max-w-sm" />
             <HeadlineReveal
-              className="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-snug"
-              lines={[
-                'Our partners and in-house associates',
-                'include paralegals and attorneys.',
-              ]}
+              className="font-display text-[clamp(1.875rem,3.75vw,2.875rem)] leading-snug"
+              lines={['Licensed Professionals On Your Side']}
             />
             <Reveal type="fade-up" delay={0.12} className="mt-6 block">
-              <p className="text-base leading-relaxed text-text-muted">
-                The team brings together investigative experience and professional perspectives—so
-                research, field work, and communication remain aligned with the decisions you need
-                to make. Counsel and licensed associates include barristers, solicitors, and
-                paralegals. Nothing on this site establishes an attorney-client relationship.
+              <p className="text-base leading-relaxed text-text-muted md:text-[17px]">
+                {brand.partnersSummary} Nothing on this site establishes an attorney-client
+                relationship.
               </p>
             </Reveal>
             <Reveal type="fade-up" delay={0.18} className="mt-6 inline-block">
               <Link
-                to="/about#team"
-                className="text-sm text-gold underline-offset-4 hover:underline"
+                to="/associates"
+                className="text-base text-gold underline-offset-4 hover:underline"
               >
-                Meet counsel & associates
+                View Associates Page
               </Link>
             </Reveal>
           </div>
@@ -393,12 +379,12 @@ export default function HomePage() {
                 <p className="text-xs uppercase tracking-[0.3em] text-gold">Approach</p>
               </Reveal>
               <HeadlineReveal
-                className="mt-3 font-display text-[clamp(2rem,4vw,3rem)]"
-                lines={['How we work']}
+                className="mt-3 font-display text-[clamp(2.125rem,4.5vw,3.25rem)]"
+                lines={['How We Work']}
               />
-              <Reveal type="fade-up" delay={0.1} className="mt-6 block max-w-md text-sm leading-relaxed text-text-muted">
-                A consistent sequence—from understanding the matter through to clear
-                communication—so you receive verified information you can use.
+              <Reveal type="fade-up" delay={0.1} className="mt-6 block max-w-md text-base leading-relaxed text-text-muted">
+                A consistent sequence, from understanding the matter through to clear
+                communication, so you receive verified information you can use.
               </Reveal>
               <RevealImage className="mt-10 hidden max-w-md lg:block">
                 <img
@@ -422,9 +408,9 @@ export default function HomePage() {
                     className="absolute left-0 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-gold bg-bg-panel"
                     aria-hidden="true"
                   />
-                  <p className="font-display text-3xl text-gold">{item.step}</p>
-                  <h3 className="mt-2 font-display text-xl text-text-primary">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-text-muted">{item.copy}</p>
+                  <p className="font-display text-4xl text-gold">{item.step}.</p>
+                  <h3 className="mt-2 font-display text-xl text-text-primary md:text-2xl">{item.title}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-text-muted">{item.copy}</p>
                 </RevealItem>
               ))}
             </RevealStagger>

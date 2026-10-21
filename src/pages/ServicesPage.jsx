@@ -25,8 +25,8 @@ export default function ServicesPage() {
   return (
     <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
-        eyebrow="What we do"
-        titleLines={['Investigation, serving,', 'tracing & verification.']}
+        eyebrow="What We Do"
+        titleLines={['Investigation, Serving,', 'Tracing & Verification.']}
         description={brand.whatWeDoSummary}
         image={siteImages.servicesHero}
       />
@@ -35,7 +35,7 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 md:grid-cols-2 md:px-8 lg:px-12">
           <Reveal type="fade-up" className="block border border-gold/30 bg-bg-panel/50 p-6 md:p-8">
             <p className="text-xs uppercase tracking-[0.25em] text-gold">Nationwide coverage</p>
-            <p className="mt-3 text-sm leading-relaxed text-text-muted md:text-base">
+            <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[17px]">
               {brand.processServersNote}
             </p>
           </Reveal>
@@ -76,7 +76,7 @@ export default function ServicesPage() {
           body={service.body}
           image={resolveServiceImageMeta(service)}
           reverse={index % 2 === 1}
-          clientSuppliedNote={service.clientSuppliedNote}
+          clientSuppliedNote={service.clientSuppliedNote || ''}
           showClientRate={service.id === 'process-serving'}
         />
       ))}

@@ -1,11 +1,11 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import AboutPeopleNav from '../components/AboutPeopleNav'
 import PageHero from '../components/PageHero'
 import ContactCTA from '../components/ContactCTA'
 import ButtonLink from '../components/ButtonLink'
 import { HeadlineReveal, Reveal, RevealImage, RevealItem, RevealLine, RevealStagger } from '../components/Reveal'
 import FounderProfile from '../components/FounderProfile'
-import ParalegalServicesNote from '../components/ParalegalServicesNote'
 import TeamMemberProfile from '../components/TeamMemberProfile'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
@@ -149,19 +149,22 @@ export default function AboutPage() {
       <section id="team" className="scroll-mt-28 border-b border-white/5 py-20 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-12">
           <Reveal type="clip-up">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Team & associates</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold">Team & Associates</p>
           </Reveal>
           <HeadlineReveal
             className="mt-3 font-display text-[clamp(2rem,3.5vw,3rem)]"
-            lines={['Investigators, counsel, and', 'professional support.']}
+            lines={['Investigators, Counsel, And', 'Professional Support.']}
           />
-          <Reveal type="fade-up" delay={0.08} className="mt-6 block max-w-3xl text-sm leading-relaxed text-text-muted md:text-base">
+          <Reveal type="fade-up" delay={0.08} className="mt-6 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[17px]">
             Our team includes senior investigators, counsel, and licensed professionals who work with{' '}
             {brand.name} on skip tracing, forensic claims, litigation support, and client-facing
-            legal services. Profiles below are for
+            legal services. See the{' '}
+            <Link to="/associates" className="text-gold underline-offset-2 hover:underline">
+              Associates
+            </Link>{' '}
+            page for paralegals, attorneys, and forensic accounting experts. Profiles below are for
             general information; engaging a specific professional may require a separate agreement.
           </Reveal>
-          <ParalegalServicesNote className="mt-10" />
 
           <div className="mt-12 space-y-10">
             {teamMembers.map((member) => (

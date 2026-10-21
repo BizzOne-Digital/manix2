@@ -5,7 +5,7 @@ import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
 
 export default function ContactCTA({
-  heading = 'Make Your Next Decision with Greater Clarity.',
+  heading = "Let's Discuss Your Matter",
   description = 'Describe the general nature of your inquiry. We will respond through appropriate professional channels.',
   className = '',
 }) {
@@ -44,16 +44,35 @@ export default function ContactCTA({
           </Reveal>
           <RevealLine className="mb-5 max-w-xs" />
           <HeadlineReveal
-            className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-tight text-text-primary"
+            className="font-display text-[clamp(2.125rem,4.5vw,3.5rem)] leading-tight text-text-primary"
             lines={headingLines.length > 1 ? headingLines : [heading]}
           />
           <Reveal type="blur-in" delay={0.12} className="mt-5 block">
-            <p className="max-w-xl text-sm leading-relaxed text-text-muted md:text-base">
+            <p className="max-w-xl text-base leading-relaxed text-text-muted md:text-[17px]">
               {description}
             </p>
           </Reveal>
         </div>
         <Reveal type="slide-right" className="min-w-0 space-y-5 border-t border-gold/30 pt-8 md:border-l md:border-t-0 md:pl-10 md:pt-0">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-text-muted">Connect</p>
+            <ul className="mt-4 flex flex-wrap gap-3">
+              {brand.socialLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-bg-main/80 text-2xl transition-colors hover:border-gold/50 hover:bg-gold/10"
+                    aria-label={item.label}
+                    title={item.label}
+                  >
+                    <span aria-hidden="true">{item.emoji}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-text-muted">Email</p>
             <a
@@ -75,7 +94,7 @@ export default function ContactCTA({
           <ButtonLink to="/contact" variant="primary" className="mt-4">
             Discuss Your Matter
           </ButtonLink>
-          <p className="text-xs leading-relaxed text-text-muted">
+          <p className="text-sm leading-relaxed text-text-muted">
             Prefer email?{' '}
             <Link to="/contact" className="text-gold underline-offset-2 hover:underline">
               Use our inquiry form

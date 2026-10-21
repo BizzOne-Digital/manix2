@@ -8,11 +8,11 @@ export default function ParalegalServicesNote({ className = '' }) {
         className,
       ].join(' ')}
     >
-      <p className="text-xs uppercase tracking-[0.25em] text-gold">Paralegal services</p>
-      <p className="mt-3 text-sm leading-relaxed text-text-muted md:text-base">
-        {brand.paralegalTeamNote}
+      <p className="text-xs uppercase tracking-[0.25em] text-gold">Paralegal Services</p>
+      <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[17px]">
+        {brand.paralegalIntro}
       </p>
-      <ul className="mt-4 space-y-2 text-sm text-text-primary">
+      <ul className="mt-4 space-y-2.5 text-base text-text-primary md:text-[17px]">
         {brand.paralegalSpecializations.map((item) => (
           <li key={item} className="flex gap-2">
             <span className="text-gold" aria-hidden="true">·</span>

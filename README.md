@@ -1,4 +1,4 @@
-# Mannix Investigations & Legal Services — Frontend
+# Mannix Investigation & Legal Services — Frontend
 
 Premium marketing site built with **Vite**, **React**, **React Router**, **Tailwind CSS v4**, and **GSAP (ScrollTrigger)**.
 

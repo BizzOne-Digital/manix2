@@ -100,11 +100,11 @@ export default function ServiceSection({
             >
               {number}
             </p>
-            <h2 className="mt-2 font-display text-[clamp(2rem,3.5vw,3rem)] text-text-primary">
+            <h2 className="mt-2 font-display text-[clamp(2.125rem,3.75vw,3.25rem)] leading-[1.15] pb-1 text-text-primary">
               {title}
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-gold-light/90">{summary}</p>
-            <div className="mt-6 space-y-4 text-sm leading-relaxed text-text-muted md:text-base">
+            <p className="mt-5 text-lg leading-relaxed text-gold-light/90 md:text-xl">{summary}</p>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-text-muted md:text-[17px]">
               {body.map((paragraph, i) => (
                 <p key={i} data-service-paragraph>
                   {paragraph}

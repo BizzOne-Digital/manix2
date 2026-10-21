@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom'
 import ButtonLink from './ButtonLink'
 import { HeadlineReveal, Reveal, RevealItem, RevealStagger } from './Reveal'
 import { brand } from '../data/brand'
-import { featuredServices } from '../data/services'
+import { useServicesContent } from '../hooks/useServicesContent'
 
 export default function WhatWeDoBanner() {
+  const { featuredServices } = useServicesContent()
+
   return (
     <section
       id="what-we-do"
@@ -12,30 +14,30 @@ export default function WhatWeDoBanner() {
     >
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
         <Reveal type="fade-up">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">What we do</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-gold">What We Do</p>
         </Reveal>
         <HeadlineReveal
-          className="mt-3 max-w-3xl font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-tight"
+          className="mt-3 max-w-3xl font-display text-[clamp(1.875rem,4.25vw,2.875rem)] leading-[1.2]"
           lines={[brand.whatWeDoHeadline]}
         />
-        <Reveal type="fade-up" delay={0.08} className="mt-5 block max-w-3xl text-base leading-relaxed text-text-muted">
+        <Reveal type="fade-up" delay={0.08} className="mt-5 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[17px]">
           {brand.whatWeDoSummary}
         </Reveal>
 
         <RevealStagger className="mt-10 grid gap-4 sm:grid-cols-3">
           <RevealItem className="border border-white/10 bg-bg-panel/60 p-6 text-center">
             <p className="font-display text-4xl text-gold">40+</p>
-            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">Years in business</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">Years In Business</p>
           </RevealItem>
           <RevealItem className="border border-gold/30 bg-bg-panel/60 p-6 text-center">
             <p className="font-display text-4xl text-gold">{brand.processServersCanada}</p>
             <p className="mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">
-              Process servers across Canada
+              Process Servers Across Canada
             </p>
           </RevealItem>
           <RevealItem className="border border-white/10 bg-bg-panel/60 p-6 text-center">
             <p className="font-display text-4xl text-gold">{featuredServices.length}</p>
-            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">Core service areas</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">Core Service Areas</p>
           </RevealItem>
         </RevealStagger>
 
@@ -47,23 +49,18 @@ export default function WhatWeDoBanner() {
                 className="block border-l-2 border-gold/50 py-2 pl-4 transition-colors hover:border-gold hover:text-gold-light"
               >
                 <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{service.number}</p>
-                <p className="mt-1 font-display text-lg text-text-primary">{service.title}</p>
+                <p className="mt-1 font-display text-lg leading-snug text-text-primary md:text-xl">
+                  {service.title}
+                </p>
               </Link>
             </RevealItem>
           ))}
         </RevealStagger>
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <ButtonLink to="/services" showArrow>View all services</ButtonLink>
-          <ButtonLink to="/contact" variant="secondary" showArrow>Contact us</ButtonLink>
+          <ButtonLink to="/services" showArrow>View All Services</ButtonLink>
+          <ButtonLink to="/associates" variant="secondary" showArrow>Meet Associates</ButtonLink>
         </div>
-
-        <Reveal type="fade-up" delay={0.1} className="mt-10 block border border-white/10 bg-bg-panel/40 p-6 md:p-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-gold">Legal support team</p>
-          <p className="mt-3 text-sm leading-relaxed text-text-muted md:text-base">
-            {brand.paralegalTeamNote}
-          </p>
-        </Reveal>
       </div>
     </section>
   )

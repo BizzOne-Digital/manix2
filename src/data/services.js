@@ -22,7 +22,7 @@ export const featuredServices = [
   {
     id: 'background-verification',
     number: '03',
-    title: 'Tenant, Applicant & Background Verification',
+    title: 'Tenant Applicant & Background Verification',
     short:
       'Independent verification to assess consistency between applications and wider findings.',
     anchor: 'background-verification',
@@ -51,8 +51,7 @@ export const serviceDetails = [
       brand.processServersNote,
       'When subjects cannot be located domestically, clients may choose whether to pursue further options. We communicate findings clearly so legal teams can decide next steps without assumptions.',
     ],
-    clientSuppliedNote:
-      'The client has referenced an approximate success rate of 99.3% for process serving. This figure is not published here pending confirmation of measurement period and methodology, and should not be read as a guarantee.',
+    clientSuppliedNote: '',
     imageKey: 'processServing',
   },
   {
@@ -70,12 +69,12 @@ export const serviceDetails = [
   {
     id: 'background-verification',
     number: '03',
-    title: 'Tenant, Applicant & Background Verification',
+    title: 'Tenant Applicant & Background Verification',
     summary:
       'An application is a starting point. Independent verification helps assess whether information supplied by a prospective tenant, buyer, or investor aligns with broader research.',
     body: [
       'We examine stated employment, references, associations, and other claims against independently gathered information where lawfully available.',
-      'This work supports landlords, lenders, legal professionals, and individuals who need clarity—not a substitute for legal advice, but a structured view of what the record supports.',
+      'This work supports landlords, lenders, legal professionals, and individuals who need clarity, not a substitute for legal advice, but a structured view of what the record supports.',
     ],
     imageKey: 'background',
   },
@@ -86,7 +85,7 @@ export const serviceDetails = [
     summary:
       'Investigations into individuals and entities, including legally obtainable information about assets, liabilities, corporate interests, partnerships, beneficial ownership, and potentially undisclosed interests.',
     body: [
-      'Financial and corporate structures can be opaque. We assemble a picture from public records, corporate filings, and other lawful sources—always within the limits of what can ethically and legally be accessed.',
+      'Financial and corporate structures can be opaque. We assemble a picture from public records, corporate filings, and other lawful sources, always within the limits of what can ethically and legally be accessed.',
       'We do not suggest unrestricted access to private financial records. Findings are communicated in clear, professional language so clients and counsel can evaluate risk and next steps.',
     ],
     imageKey: 'solvency',

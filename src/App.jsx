@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import ServicesPage from './pages/ServicesPage'
 import TestimonialsPage from './pages/TestimonialsPage'
+import AssociatesPage from './pages/AssociatesPage'
 import WelcomePage from './pages/WelcomePage'
 import AdminGuard from './admin/AdminGuard'
 import AdminLayout from './admin/AdminLayout'
@@ -42,6 +43,7 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
+            <Route path="associates" element={<AssociatesPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="testimonials" element={<TestimonialsPage />} />
             <Route path="home" element={<Navigate to="/" replace />} />

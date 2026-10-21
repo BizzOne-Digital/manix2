@@ -38,6 +38,8 @@
     background-color: var(--color-bg-main);
     color: var(--color-text-primary);
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
   }
@@ -162,5 +164,31 @@
     );
     animation: light-sweep 8s ease-in-out infinite;
     pointer-events: none;
+  }
+}
+
+@keyframes hero-ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-ticker-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-ticker-track {
+    animation: hero-ticker-scroll 32s linear infinite;
   }
 }

@@ -7,6 +7,9 @@ function withFormattedTitles(services) {
   return services.map((s) => ({
     ...s,
     title: formatHeadingText(formatServiceTitle(s.title)),
+    bannerTitle: s.bannerTitle
+      ? formatHeadingText(formatServiceTitle(s.bannerTitle))
+      : undefined,
   }))
 }
 

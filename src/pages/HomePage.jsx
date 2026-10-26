@@ -241,7 +241,7 @@ export default function HomePage() {
               </Reveal>
               <HeadlineReveal
                 className="mt-3 font-display text-[clamp(2rem,4vw,3.25rem)]"
-                lines={['Featured', 'Capabilities']}
+                lines={['Featured Capabilities']}
               />
             </div>
             <Reveal type="slide-right" className="md:pb-2">

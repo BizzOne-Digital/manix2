@@ -48,7 +48,7 @@ export default function WhatWeDoBanner() {
               <RevealItem key={service.id} className="min-w-0">
                 <Link
                   to={`/services#${service.anchor}`}
-                  className="block min-w-0 border-l-2 border-gold/50 py-2 pl-3 pr-1 text-left transition-colors hover:border-gold hover:text-gold-light lg:pl-4"
+                  className="block min-w-0 border-l-2 border-gold/50 py-2 pl-2 pr-0 text-left transition-colors hover:border-gold hover:text-gold-light"
                 >
                   <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{service.number}</p>
                   <p

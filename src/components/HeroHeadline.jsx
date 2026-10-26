@@ -27,12 +27,12 @@ export default function HeroHeadline({ className = '' }) {
     <h1
       ref={ref}
       className={[
-        'hero-headline min-w-0 max-w-full font-display font-medium leading-[1.12] tracking-[-0.01em] text-text-primary',
+        'min-w-0 max-w-full font-display text-[clamp(1.375rem,4.2vw,2.875rem)] font-medium leading-[1.2] tracking-[-0.01em] text-text-primary',
         className,
       ].join(' ')}
     >
-      <span data-line className="block text-text-primary">Celebrated Award Winning</span>
-      <span data-line className="block gold-gradient-text font-semibold">Commercial Investigators</span>
+      <span data-line className="block pt-0.5 pb-1.5 text-text-primary">Celebrated Award Winning</span>
+      <span data-line className="block pt-0.5 pb-1.5 gold-gradient-text font-semibold">Commercial Investigators</span>
     </h1>
   )
 }

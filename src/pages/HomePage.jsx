@@ -130,7 +130,7 @@ export default function HomePage() {
           data-hero-float
           className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col justify-center px-4 pb-24 pt-32 sm:px-5 sm:pb-28 sm:pt-36 md:px-10 md:pb-32 md:pt-40 lg:px-16 lg:pt-44"
         >
-          <div className="min-w-0 w-full max-w-3xl lg:max-w-5xl">
+          <div className="min-w-0 w-full max-w-3xl">
             <p
               data-hero-eyebrow
               className="mb-2 text-[11px] font-medium uppercase tracking-[0.28em] text-gold-light/90 sm:tracking-[0.38em] md:text-xs md:tracking-[0.45em]"

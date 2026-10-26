@@ -110,17 +110,9 @@
     );
   }
 
-  /* Hero H1: two lines, scales with column width */
-  .hero-headline {
-    container-type: inline-size;
-    font-size: clamp(1.35rem, 5.25cqi, 3.25rem);
-    line-height: 1.14;
-  }
-
-  /* Welcome gate: one full headline line, scales down instead of wrapping */
+  /* Welcome gate: one full headline line, scales with viewport (no cqi — avoids runaway size) */
   .welcome-headline {
-    container-type: inline-size;
-    font-size: clamp(0.625rem, 3.15cqi, 2.25rem);
+    font-size: clamp(0.625rem, 2.65vw, 2.25rem);
     line-height: 1.2;
     white-space: nowrap;
   }

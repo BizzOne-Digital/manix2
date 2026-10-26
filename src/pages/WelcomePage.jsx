@@ -31,7 +31,7 @@ export default function WelcomePage() {
   }
 
   return (
-    <div className="relative flex min-h-[100svh] min-w-0 flex-col items-center justify-center overflow-hidden bg-black px-5 py-12 text-center">
+    <div className="relative flex min-h-[100svh] min-w-0 flex-col items-center justify-center overflow-x-hidden bg-black px-4 py-12 sm:px-5">
       <img
         src={siteImages.hero.src}
         alt=""
@@ -42,24 +42,24 @@ export default function WelcomePage() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center px-1">
+      <div className="relative z-10 mx-auto flex w-full max-w-[min(100%,56rem)] flex-col items-start px-1 text-left">
         <img
           src={brand.logoSrc}
           alt={brand.logoAlt}
           width={280}
           height={100}
-          className="h-auto w-full max-w-[min(280px,72vw)] object-contain"
+          className="mx-auto h-auto w-full max-w-[min(280px,72vw)] object-contain"
         />
 
-        <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.35em] text-gold">
+        <p className="mt-8 w-full text-[10px] font-medium uppercase tracking-[0.35em] text-gold">
           {brand.yearsEyebrow}
         </p>
 
-        <h1 className="mt-5 w-full min-w-0 font-display text-[clamp(0.6875rem,3.35vw,2.25rem)] leading-snug whitespace-nowrap text-text-primary">
+        <h1 className="welcome-headline mt-5 w-full min-w-0 font-display text-text-primary">
           {formatHeadingText(brand.whatWeDoHeadline)}
         </h1>
 
-        <p className="mt-5 text-sm leading-relaxed text-text-muted md:text-base">
+        <p className="mt-5 w-full text-sm leading-relaxed text-text-muted md:text-base">
           {brand.whatWeDoSummary}
         </p>
 
@@ -75,18 +75,18 @@ export default function WelcomePage() {
         <button
           type="button"
           onClick={enterSite}
-          className="mt-10 w-full max-w-sm border border-gold bg-gold/10 px-8 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-gold-light transition-colors hover:bg-gold/20 touch-manipulation"
+          className="mt-10 w-full max-w-sm self-center border border-gold bg-gold/10 px-8 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-gold-light transition-colors hover:bg-gold/20 touch-manipulation"
         >
           Enter site
         </button>
 
         {musicAvailable ? (
-          <p className="mt-4 text-[10px] leading-relaxed text-text-muted">
+          <p className="mt-4 self-center text-center text-[10px] leading-relaxed text-text-muted">
             Background music will begin when you enter (you can turn it off anytime).
           </p>
         ) : null}
 
-        <p className="mt-8 max-w-md text-sm leading-relaxed text-text-muted">
+        <p className="mt-8 w-full max-w-md text-sm leading-relaxed text-text-muted">
           {brand.paralegalIntro}
         </p>
       </div>

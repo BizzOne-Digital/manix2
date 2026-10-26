@@ -3,8 +3,25 @@ import { featuredServices, serviceDetails } from '../data/services'
 import { formatServiceTitle } from '../lib/formatServiceTitle'
 import { formatHeadingText } from '../lib/headingText'
 
+const staticBannerTitleByKey = Object.fromEntries(
+  featuredServices
+    .filter((s) => s.bannerTitle)
+    .flatMap((s) => [
+      [s.id, s.bannerTitle],
+      [s.anchor, s.bannerTitle],
+    ]),
+)
+
+function withBannerTitles(services) {
+  return services.map((s) => {
+    const key = s.id || s.slug || s.anchor
+    const bannerTitle = s.bannerTitle || staticBannerTitleByKey[key]
+    return bannerTitle ? { ...s, bannerTitle } : s
+  })
+}
+
 function withFormattedTitles(services) {
-  return services.map((s) => ({
+  return withBannerTitles(services).map((s) => ({
     ...s,
     title: formatHeadingText(formatServiceTitle(s.title)),
     bannerTitle: s.bannerTitle

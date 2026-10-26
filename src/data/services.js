@@ -23,6 +23,7 @@ export const featuredServices = [
     id: 'background-verification',
     number: '03',
     title: 'Tenant Applicant & Background Verification',
+    bannerTitle: 'Tenant & Background Verification',
     short:
       'Independent verification to assess consistency between applications and wider findings.',
     anchor: 'background-verification',
@@ -32,6 +33,7 @@ export const featuredServices = [
     id: 'solvency-asset',
     number: '04',
     title: 'Solvency & Asset Investigations',
+    bannerTitle: 'Solvency & Assets',
     short:
       'Lawfully obtainable information on assets, liabilities, interests, and financial relationships.',
     anchor: 'solvency-asset',

@@ -26,15 +26,13 @@ export default function HeroHeadline({ className = '' }) {
     <h1
       ref={ref}
       className={[
-        'max-w-full overflow-x-auto font-display text-[clamp(1.25rem,4.5vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.01em] whitespace-nowrap',
+        'hero-headline min-w-0 max-w-full font-display font-medium leading-[1.12] tracking-[-0.01em] text-text-primary',
         className,
       ].join(' ')}
     >
-      <span className="block py-0.5">
-        <span data-line className="block">
-          <span className="text-text-primary">Celebrated Award Winning </span>
-          <span className="gold-gradient-text font-semibold">Commercial Investigators</span>
-        </span>
+      <span data-line className="block min-w-0">
+        <span className="text-text-primary">Celebrated Award Winning </span>
+        <span className="gold-gradient-text font-semibold">Commercial Investigators</span>
       </span>
     </h1>
   )

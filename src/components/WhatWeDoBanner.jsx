@@ -41,20 +41,26 @@ export default function WhatWeDoBanner() {
           </RevealItem>
         </RevealStagger>
 
-        <RevealStagger className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredServices.map((service) => (
-            <RevealItem key={service.id}>
-              <Link
-                to={`/services#${service.anchor}`}
-                className="block border-l-2 border-gold/50 py-2 pl-4 transition-colors hover:border-gold hover:text-gold-light"
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{service.number}</p>
-                <p className="mt-1 font-display text-base leading-snug whitespace-nowrap text-text-primary md:text-lg">
-                  {service.title}
-                </p>
-              </Link>
-            </RevealItem>
-          ))}
+        <RevealStagger className="mt-10 grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
+          {featuredServices.map((service) => {
+            const displayTitle = service.bannerTitle ?? service.title
+            return (
+              <RevealItem key={service.id} className="min-w-0">
+                <Link
+                  to={`/services#${service.anchor}`}
+                  className="block min-w-0 overflow-hidden border-l-2 border-gold/50 py-2 pl-4 transition-colors hover:border-gold hover:text-gold-light"
+                >
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{service.number}</p>
+                  <p
+                    className="what-we-do-service-title mt-1 min-w-0 font-display text-text-primary"
+                    title={service.title}
+                  >
+                    {displayTitle}
+                  </p>
+                </Link>
+              </RevealItem>
+            )
+          })}
         </RevealStagger>
 
         <div className="mt-10 flex flex-wrap gap-4">

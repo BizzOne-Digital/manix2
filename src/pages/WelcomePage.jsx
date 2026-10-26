@@ -42,7 +42,7 @@ export default function WelcomePage() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
 
-      <div className="relative z-10 mx-auto flex max-w-lg flex-col items-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center px-1">
         <img
           src={brand.logoSrc}
           alt={brand.logoAlt}
@@ -55,7 +55,7 @@ export default function WelcomePage() {
           {brand.yearsEyebrow}
         </p>
 
-        <h1 className="mt-5 max-w-full overflow-x-auto font-display text-[clamp(1.125rem,3.5vw,2.25rem)] leading-snug whitespace-nowrap text-text-primary">
+        <h1 className="mt-5 w-full min-w-0 font-display text-[clamp(0.6875rem,3.35vw,2.25rem)] leading-snug whitespace-nowrap text-text-primary">
           {formatHeadingText(brand.whatWeDoHeadline)}
         </h1>
 

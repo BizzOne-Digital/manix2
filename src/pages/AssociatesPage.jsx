@@ -23,7 +23,7 @@ export default function AssociatesPage() {
     <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow="Associates"
-        titleLines={['Partners, Counsel,', 'And Professional Support.']}
+        titleLines={['Partners, Counsel,', '& Professional Support.']}
         description={brand.partnersSummary}
         image={siteImages.partners}
       />

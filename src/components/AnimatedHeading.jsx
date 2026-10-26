@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useReducedMotion } from '../hooks/useMedia'
+import { formatHeadingText } from '../lib/headingText'
 
 export default function AnimatedHeading({
   as: Tag = 'h2',
@@ -33,16 +34,16 @@ export default function AnimatedHeading({
   return (
     <Tag ref={ref} className={className}>
       {lines.map((line, i) => (
-        <span key={i} className="block overflow-hidden py-1">
+        <span key={i} className="block overflow-hidden pt-1 pb-2">
           <span
             data-line
             className={[
-              'block',
+              'block pb-0.5',
               lineClassName,
               highlightIndex === i ? highlightClassName : '',
             ].join(' ')}
           >
-            {line}
+            {formatHeadingText(line)}
           </span>
         </span>
       ))}

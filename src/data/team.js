@@ -31,7 +31,7 @@ export const teamMembers = [
   {
     id: 'jorgen',
     name: 'Jorgen',
-    credentials: 'Barrister And Solicitor',
+    credentials: 'Barrister & Solicitor',
     bio: [
       `Jorgen is a Toronto lawyer who specializes in complex legislative and regulatory litigation. He began his career as a securities regulator and holds a commerce degree from the University of Toronto and a law degree from Osgoode Hall Law School. He understands how regulators investigate, what they need to prove, and where files are won or lost.`,
       `His practice includes civil litigation, licensing and bylaw enforcement, criminal and provincial offences defence, and immigration. Jorgen works with ${brand.fullName} as counsel on commercial matters, alongside its process serving, court filing, and investigative support.`,
@@ -41,7 +41,7 @@ export const teamMembers = [
   {
     id: 'avery',
     name: 'Avery',
-    credentials: 'Licensed Paralegal And Notary Public',
+    credentials: 'Licensed Paralegal & Notary Public',
     bio: [
       `Avery is a licensed paralegal and Notary Public dedicated to providing clear, practical, and client-focused legal guidance. Since earning his license in 2025 following graduation from George Brown College, Avery has built a diverse practice. While initially specializing in Provincial Offences Act matters, he has expanded his expertise to include residential tenancy law, summary criminal defence, and tribunal proceedings.`,
       `Avery is committed to demystifying the legal process and ensuring clients understand their options every step of the way.`,
@@ -57,7 +57,7 @@ export const teamMembers = [
           'Defence representation for individuals charged under provincial legislation and bylaws.',
       },
       {
-        title: 'Landlord And Tenant Matters',
+        title: 'Landlord & Tenant Matters',
         description:
           'Representation of both landlords and tenants in applications and proceedings before the Landlord and Tenant Board.',
       },
@@ -75,7 +75,7 @@ export const teamMembers = [
         description: 'Representation in proceedings before administrative tribunals.',
       },
       {
-        title: 'Notary And Commissioner Services',
+        title: 'Notary & Commissioner Services',
         description: 'Notary Public and commissioning of affidavits and other documents.',
       },
     ],

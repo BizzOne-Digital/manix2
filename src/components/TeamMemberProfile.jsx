@@ -1,4 +1,5 @@
 import { Reveal, RevealItem, RevealStagger } from './Reveal'
+import { formatHeadingText } from '../lib/headingText'
 
 export default function TeamMemberProfile({ member }) {
   return (
@@ -9,7 +10,7 @@ export default function TeamMemberProfile({ member }) {
       <Reveal type="fade-up">
         <h3 className="font-display text-2xl text-text-primary md:text-3xl">{member.name}</h3>
         <p className="mt-2 text-sm font-medium uppercase tracking-[0.2em] text-gold">
-          {member.credentials}
+          {formatHeadingText(member.credentials)}
         </p>
       </Reveal>
 
@@ -31,7 +32,7 @@ export default function TeamMemberProfile({ member }) {
           <ul className="mt-6 space-y-5">
             {member.practiceAreas.map((area) => (
               <li key={area.title} className="border-l border-gold/35 pl-4">
-                <p className="font-display text-lg text-text-primary">{area.title}</p>
+                <p className="font-display text-lg text-text-primary">{formatHeadingText(area.title)}</p>
                 <p className="mt-1 text-sm leading-relaxed text-text-muted">{area.description}</p>
               </li>
             ))}

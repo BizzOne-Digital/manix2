@@ -9,13 +9,21 @@ export default function ContactCTA({
   description = 'Describe the general nature of your inquiry. We will respond through appropriate professional channels.',
   className = '',
 }) {
-  const headingLines = heading.includes('.')
-    ? heading
-        .split('.')
-        .map((part) => part.trim())
+  const headingLines = (() => {
+    const text = heading.trim()
+    if (!text) return []
+    // Only break on “. ” between phrases — not a trailing period on one line.
+    if (/\.\s+\S/.test(text)) {
+      return text
+        .split(/\.\s+/)
+        .map((part, i, arr) => {
+          const line = part.trim()
+          return i < arr.length - 1 ? `${line}.` : line.replace(/\.$/, '')
+        })
         .filter(Boolean)
-        .map((part, i, arr) => (i < arr.length - 1 ? `${part}.` : part))
-    : [heading]
+    }
+    return [text]
+  })()
 
   return (
     <section
@@ -37,15 +45,15 @@ export default function ContactCTA({
         aria-hidden="true"
       />
       <div className="pointer-events-none absolute inset-0 bg-bg-panel/92" />
-      <div className="relative z-10 mx-auto grid min-w-0 max-w-[1440px] gap-10 px-4 py-16 sm:px-5 sm:py-20 md:grid-cols-[1.2fr_1fr] md:items-end md:px-8 lg:px-12 lg:py-28">
+      <div className="relative z-10 mx-auto grid min-w-0 max-w-[1440px] gap-8 px-4 py-12 sm:px-5 sm:py-14 md:grid-cols-[1.2fr_1fr] md:items-start md:gap-10 md:px-8 lg:px-12 lg:py-16">
         <div className="min-w-0">
           <Reveal type="slide-left">
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Inquiry</p>
           </Reveal>
           <RevealLine className="mb-5 max-w-xs" />
           <HeadlineReveal
-            className="font-display text-[clamp(2.125rem,4.5vw,3.5rem)] leading-tight text-text-primary"
-            lines={headingLines.length > 1 ? headingLines : [heading]}
+            className="max-w-3xl font-display text-[clamp(2.125rem,4.5vw,3.5rem)] leading-tight text-text-primary"
+            lines={headingLines}
           />
           <Reveal type="blur-in" delay={0.12} className="mt-5 block">
             <p className="max-w-xl text-base leading-relaxed text-text-muted md:text-[17px]">

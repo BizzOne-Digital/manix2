@@ -150,7 +150,7 @@ export default function AdminTestimonialsPage() {
         {list.map((t) => (
           <div key={t._id} className="border border-white/10 bg-bg-panel/20 p-4">
             <p className="text-sm italic text-text-muted">&ldquo;{t.quote}&rdquo;</p>
-            <p className="mt-2 font-medium">{t.name} — {t.role}</p>
+            <p className="mt-2 font-medium">{t.name} · {t.role}</p>
             <div className="mt-3 flex gap-2">
               <button type="button" onClick={() => startEdit(t)} className="border border-white/15 px-3 py-1.5 text-xs uppercase tracking-[0.14em]">
                 Edit

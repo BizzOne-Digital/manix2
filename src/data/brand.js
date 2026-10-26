@@ -3,7 +3,7 @@ export const brandContact = {
   email: 'info@mannixlegal.com',
   mailto: 'mailto:info@mannixlegal.com',
   /** Display format, do not use raw digits on the site */
-  phone: '(942) 444-9422',
+  phone: '+1 (942) 444-9422',
   phoneTel: 'tel:+19424449422',
 }
 
@@ -16,7 +16,7 @@ export const brand = {
   tagline: 'Investigation & Legal Services',
   ...brandContact,
   yearsEyebrow: 'OVER 40 YEARS IN BUSINESS',
-  heroAccolade: 'Celebrated And Awarded Commercial Investigator',
+  heroHeadline: 'Celebrated Award Winning Commercial Investigators',
   whatWeDoHeadline: 'Investigation, Process Serving & Legal Support',
   whatWeDoSummary:
     'Mannix Investigation & Legal Services helps lawyers, businesses, and individuals locate people, serve documents, verify backgrounds, and investigate assets, with disciplined research and clear reporting across Canada.',
@@ -29,14 +29,14 @@ export const brand = {
   processServersCanada: 18,
   processServersNote:
     'Mannix maintains a network of 18 process servers across Canada to support timely, informed service of process.',
-  paralegalIntro: 'Our team includes licensed paralegals specializing in:',
+  paralegalIntro: 'Our Team Includes Licensed Paralegals Specializing In:',
   paralegalSpecializations: [
-    'Landlord and Tenant Board (LTB) matters',
-    'Traffic violations',
-    'Small Claims Court actions',
-    'Provincial Offences Act matters',
-    'Summary criminal and tribunal proceedings',
-    'Notary and commissioner services',
+    'Landlord & Tenant Board (LTB) Matters',
+    'Traffic Violations',
+    'Small Claims Court Actions',
+    'Provincial Offences Act Matters',
+    'Summary Criminal & Tribunal Proceedings',
+    'Notary & Commissioner Services',
   ],
   /** @deprecated use paralegalIntro + paralegalSpecializations */
   paralegalTeamNote:

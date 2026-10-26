@@ -37,7 +37,7 @@ export default function AdminBookingsPage() {
   return (
     <div>
       <h1 className="font-display text-3xl">Bookings & inquiries</h1>
-      <p className="mt-2 text-sm text-text-muted">Review-only — submissions from the contact form.</p>
+      <p className="mt-2 text-sm text-text-muted">Review only, submissions from the contact form.</p>
 
       <div className="mt-6 flex gap-2">
         {['new', 'reviewed', 'all'].map((key) => (

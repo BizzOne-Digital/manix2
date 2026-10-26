@@ -8,7 +8,9 @@
     "dev:full": "vercel dev",
     "build": "vite build",
     "seed": "node --env-file=.env scripts/seed.mjs",
+    "fix:service-titles": "node --env-file=.env scripts/fix-service-titles.mjs",
     "lint": "oxlint",
+    "audit:site": "npm run build && npm run lint",
     "preview": "vite preview",
     "start": "vite preview --host --port 4173"
   },

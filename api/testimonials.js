@@ -1,4 +1,5 @@
 import { connectDB } from '../lib/mongodb.js'
+import { replaceEmDashInText } from '../lib/replaceEmDash.js'
 import { Testimonial } from '../lib/models/Testimonial.js'
 import { seedIfEmpty } from '../lib/seedContent.js'
 
@@ -16,9 +17,9 @@ export default async function handler(req, res) {
       success: true,
       testimonials: docs.map((t) => ({
         _id: t._id.toString(),
-        quote: t.quote,
-        name: t.name,
-        role: t.role,
+        quote: replaceEmDashInText(t.quote),
+        name: replaceEmDashInText(t.name),
+        role: replaceEmDashInText(t.role),
       })),
       testimonialsAreSamples: false,
     })

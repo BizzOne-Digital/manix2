@@ -71,7 +71,7 @@ export const siteImages = {
   ),
   background: img(
     'property-key.jpg',
-    'Gold key at a property entrance—symbolizing tenant and applicant verification',
+    'Gold key at a property entrance, symbolizing tenant and applicant verification',
   ),
   solvency: img(
     'corporate-skyline-model.jpg',

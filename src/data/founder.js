@@ -3,12 +3,12 @@ import { brand } from './brand'
 export const founderProfile = {
   eyebrow: "Founder's profile",
   displayName: 'Jeffrey',
-  fullName: 'Jeffrey Potofsky',
+  fullName: 'Jeffrey',
   title: 'Founder & Principal Investigator',
   organization: brand.fullName,
   opening: {
     contrast: [
-      'There are investigators who practice a profession—and there are investigators who build a reputation.',
+      'There are investigators who practice a profession, and there are investigators who build a reputation.',
       'Jeffrey belongs to the latter.',
     ],
     paragraphs: [
@@ -31,12 +31,12 @@ export const founderProfile = {
         `While investigative skill has been central to Jeffrey's career, he considers another asset equally important: his network.`,
         `Over decades, Jeffrey has cultivated an extensive network of professional, investigative and personal contacts extending throughout Canada and internationally. Those relationships have become one of the most valuable resources available to the clients of ${brand.fullName}.`,
         `In Jeffrey's view, successful investigation is rarely accomplished by simply asking the obvious questions or following the obvious path.`,
-        `It requires knowing whom to call, where to look, what questions to ask—and, most importantly, knowing when the information being provided is not the whole story.`,
+        `It requires knowing whom to call, where to look, what questions to ask, and, most importantly, knowing when the information being provided is not the whole story.`,
       ],
     },
     {
       id: 'legal-support',
-      title: 'From investigation to legal support',
+      title: 'From investigation & legal support',
       paragraphs: [
         `Today, Jeffrey has parlayed his decades of investigative experience into a specialized legal-support operation focused on process serving, skip tracing and solvency reporting.`,
         `${brand.fullName} combines traditional investigative discipline with Jeffrey's extensive network and decades of experience locating people, establishing facts and uncovering information.`,
@@ -59,7 +59,7 @@ export const founderProfile = {
     paragraphs: [
       'These are not merely administrative problems.',
       'They are investigative problems.',
-      `And after more than forty years in the field, Jeffrey Potofsky knows how to approach them.`,
+      `And after more than forty years in the field, Jeffrey knows how to approach them.`,
     ],
     pillars: [
       'Experience cannot be purchased.',

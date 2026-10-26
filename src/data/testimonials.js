@@ -19,7 +19,7 @@ export const testimonials = [
   },
   {
     quote:
-      'Background verification was handled with persistence and attention to detail. We received a balanced picture—not speculation.',
+      'Background verification was handled with persistence and attention to detail. We received a balanced picture, not speculation.',
     name: 'Property manager',
     role: 'Tenant screening inquiry',
   },

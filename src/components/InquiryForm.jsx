@@ -6,7 +6,7 @@ import { useServicesContent } from '../hooks/useServicesContent'
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function buildMailto({ name, email, phone, service, message }) {
-  const subject = encodeURIComponent(`Inquiry — ${brand.name} (${service || 'General'})`)
+  const subject = encodeURIComponent(`Inquiry, ${brand.name} (${service || 'General'})`)
   const bodyLines = [
     `Name: ${name}`,
     `Email: ${email}`,
@@ -47,8 +47,12 @@ export default function InquiryForm() {
   const [submitState, setSubmitState] = useState('idle')
 
   const serviceOptions = useMemo(
-    () => [{ value: '', label: 'Select a service (optional)' }, ...featuredServices.map((s) => ({ value: s.title, label: s.title })), { value: 'General inquiry', label: 'General inquiry' }],
-    [],
+    () => [
+      { value: '', label: 'Select a service (optional)' },
+      ...featuredServices.map((s) => ({ value: s.title, label: s.title })),
+      { value: 'General inquiry', label: 'General inquiry' },
+    ],
+    [featuredServices],
   )
 
   const validate = () => {
@@ -107,7 +111,7 @@ export default function InquiryForm() {
     <form onSubmit={onSubmit} className="space-y-6" noValidate>
       {submitState === 'sent' ? (
         <p className="text-sm leading-relaxed text-gold-light" role="status">
-          Thank you — your inquiry was received. We will review it and respond using the contact
+          Thank you, your inquiry was received. We will review it and respond using the contact
           details you provided.
         </p>
       ) : (
@@ -205,7 +209,7 @@ export default function InquiryForm() {
           {copyState === 'copied'
             ? 'Copied to clipboard'
             : copyState === 'failed'
-              ? 'Copy failed — try manually'
+              ? 'Copy failed, try manually'
               : 'Copy Inquiry'}
         </button>
       </div>

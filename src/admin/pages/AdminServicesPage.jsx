@@ -227,7 +227,7 @@ export default function AdminServicesPage() {
             className="flex flex-wrap items-center justify-between gap-4 border border-white/10 bg-bg-panel/20 p-4"
           >
             <div>
-              <p className="font-display text-lg">{service.number} — {service.title}</p>
+              <p className="font-display text-lg">{service.number} · {service.title}</p>
               <p className="text-sm text-text-muted">{service.short}</p>
             </div>
             <div className="flex gap-2">

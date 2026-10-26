@@ -30,8 +30,10 @@ function FooterNavLink({ to, children, end = false }) {
   )
 }
 
+const footerYear = new Date().getFullYear()
+
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const year = footerYear
 
   return (
     <footer className="relative overflow-hidden border-t border-gold/20 bg-bg-main">

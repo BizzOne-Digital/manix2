@@ -1,5 +1,14 @@
 import { useEffect, useState } from 'react'
 import { featuredServices, serviceDetails } from '../data/services'
+import { formatServiceTitle } from '../lib/formatServiceTitle'
+import { formatHeadingText } from '../lib/headingText'
+
+function withFormattedTitles(services) {
+  return services.map((s) => ({
+    ...s,
+    title: formatHeadingText(formatServiceTitle(s.title)),
+  }))
+}
 
 const fallback = {
   featuredServices,
@@ -19,14 +28,16 @@ export function useServicesContent() {
           setState({ loading: false, ...fallback })
           return
         }
+        const featured = data.featuredServices?.length
+          ? data.featuredServices
+          : data.services?.filter((s) => s.featured) || fallback.featuredServices
+        const details = data.serviceDetails?.length
+          ? data.serviceDetails
+          : data.services || fallback.serviceDetails
         setState({
           loading: false,
-          featuredServices: data.featuredServices?.length
-            ? data.featuredServices
-            : data.services?.filter((s) => s.featured) || fallback.featuredServices,
-          serviceDetails: data.serviceDetails?.length
-            ? data.serviceDetails
-            : data.services || fallback.serviceDetails,
+          featuredServices: withFormattedTitles(featured),
+          serviceDetails: withFormattedTitles(details),
           allServices: data.services,
           fromApi: true,
         })

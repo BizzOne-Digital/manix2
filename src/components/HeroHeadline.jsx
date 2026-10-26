@@ -8,14 +8,14 @@ export default function HeroHeadline({ className = '' }) {
 
   useEffect(() => {
     if (reduced || !ref.current) return
-    const lines = ref.current.querySelectorAll('[data-line]')
+    const line = ref.current.querySelector('[data-line]')
+    if (!line) return
     gsap.fromTo(
-      lines,
+      line,
       { y: 20, immediateRender: false },
       {
         y: 0,
         duration: 0.7,
-        stagger: 0.1,
         ease: 'power2.out',
         delay: 0.12,
       },
@@ -26,18 +26,14 @@ export default function HeroHeadline({ className = '' }) {
     <h1
       ref={ref}
       className={[
-        'font-display text-[clamp(2rem,8vw,4.25rem)] font-medium leading-[1.08] tracking-[-0.01em] break-words',
+        'max-w-full overflow-x-auto font-display text-[clamp(1.25rem,4.5vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.01em] whitespace-nowrap',
         className,
       ].join(' ')}
     >
       <span className="block py-0.5">
-        <span data-line className="block text-text-primary">
-          Celebrated and
-        </span>
-      </span>
-      <span className="block py-0.5">
-        <span data-line className="block text-text-primary">
-          <span className="gold-gradient-text font-semibold">Award-Winning</span> Investigators.
+        <span data-line className="block">
+          <span className="text-text-primary">Celebrated Award Winning </span>
+          <span className="gold-gradient-text font-semibold">Commercial Investigators</span>
         </span>
       </span>
     </h1>

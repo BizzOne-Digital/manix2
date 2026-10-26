@@ -17,7 +17,7 @@ export default function WhatWeDoBanner() {
           <p className="text-xs uppercase tracking-[0.3em] text-gold">What We Do</p>
         </Reveal>
         <HeadlineReveal
-          className="mt-3 max-w-3xl font-display text-[clamp(1.875rem,4.25vw,2.875rem)] leading-[1.2]"
+          className="mt-3 max-w-full font-display text-[clamp(1.125rem,2.75vw,2.875rem)] leading-[1.2] whitespace-nowrap"
           lines={[brand.whatWeDoHeadline]}
         />
         <Reveal type="fade-up" delay={0.08} className="mt-5 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[17px]">
@@ -49,7 +49,7 @@ export default function WhatWeDoBanner() {
                 className="block border-l-2 border-gold/50 py-2 pl-4 transition-colors hover:border-gold hover:text-gold-light"
               >
                 <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{service.number}</p>
-                <p className="mt-1 font-display text-lg leading-snug text-text-primary md:text-xl">
+                <p className="mt-1 font-display text-base leading-snug whitespace-nowrap text-text-primary md:text-lg">
                   {service.title}
                 </p>
               </Link>

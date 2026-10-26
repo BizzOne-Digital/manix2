@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useIsMobile, useReducedMotion } from '../hooks/useMedia'
+import { formatHeadingText } from '../lib/headingText'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -13,6 +14,7 @@ export default function PageHero({
   image,
   children,
   align = 'left',
+  compact = false,
 }) {
   const scope = useRef(null)
   const reduced = useReducedMotion()
@@ -63,7 +65,12 @@ export default function PageHero({
   return (
     <section
       ref={scope}
-      className="relative min-h-[72vh] overflow-hidden border-b border-white/5 bg-bg-main pt-32 sm:pt-36 md:min-h-[78vh] md:pt-40 lg:pt-44"
+      className={[
+        'relative overflow-hidden border-b border-white/5 bg-bg-main',
+        compact
+          ? 'pt-32 pb-10 sm:pt-36 sm:pb-12 md:pt-40 md:pb-14'
+          : 'min-h-[72vh] pt-32 sm:pt-36 md:min-h-[78vh] md:pt-40 lg:pt-44',
+      ].join(' ')}
     >
       <div className="absolute inset-0">
         {!imgError && image ? (
@@ -87,7 +94,8 @@ export default function PageHero({
 
       <div
         className={[
-          'relative mx-auto flex min-w-0 max-w-[1440px] flex-col justify-end px-4 pb-12 sm:px-5 sm:pb-16 md:px-8 lg:px-12',
+          'relative mx-auto flex min-w-0 max-w-[1440px] flex-col px-4 sm:px-5 md:px-8 lg:px-12',
+          compact ? 'justify-start pb-0' : 'justify-end pb-12 sm:pb-16',
           align === 'center' ? 'items-center text-center' : 'items-start text-left',
         ].join(' ')}
       >
@@ -99,11 +107,11 @@ export default function PageHero({
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="max-w-full font-display text-[clamp(1.85rem,7vw,4rem)] font-medium leading-[1.05] tracking-[-0.01em] text-text-primary break-words">
+        <h1 className="max-w-3xl font-display text-[clamp(1.85rem,7vw,4rem)] font-medium leading-[1.18] tracking-[-0.01em] text-text-primary text-left">
           {lines.map((line, i) => (
-            <span key={i} className="block overflow-hidden py-0.5">
-              <span data-hero-title-line className="block">
-                {line}
+            <span key={i} className="block overflow-hidden pt-0.5 pb-1.5">
+              <span data-hero-title-line className="block pb-0.5">
+                {formatHeadingText(line)}
               </span>
             </span>
           ))}

@@ -137,9 +137,6 @@ export default function HomePage() {
             >
               {brand.yearsEyebrow}
             </p>
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-gold/95 sm:text-base md:text-lg">
-              {brand.heroAccolade}
-            </p>
             <HeroHeadline />
             <p
               data-hero-support
@@ -371,10 +368,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative border-t border-white/5 bg-bg-panel py-20 md:py-28">
+      <section className="relative border-t border-white/5 bg-bg-panel pb-12 pt-16 md:pb-14 md:pt-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div className="lg:sticky lg:top-28">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="lg:sticky lg:top-28 lg:self-start">
               <Reveal type="fade-up">
                 <p className="text-xs uppercase tracking-[0.3em] text-gold">Approach</p>
               </Reveal>
@@ -386,28 +383,14 @@ export default function HomePage() {
                 A consistent sequence, from understanding the matter through to clear
                 communication, so you receive verified information you can use.
               </Reveal>
-              <RevealImage className="mt-10 hidden max-w-md lg:block">
-                <img
-                  src={siteImages.approach.src}
-                  alt={siteImages.approach.alt}
-                  width={siteImages.approach.width}
-                  height={siteImages.approach.height}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover"
-                />
-              </RevealImage>
             </div>
 
             <RevealStagger className="relative space-y-0 border-l border-gold/30 pl-6 sm:pl-8 md:pl-10">
               {approachSteps.map((item) => (
                 <RevealItem
                   key={item.step}
-                  className="relative border-b border-white/5 py-8 first:pt-0 last:border-b-0 last:pb-0"
+                  className="border-b border-white/5 py-6 first:pt-0 last:border-b-0 last:pb-0 md:py-7"
                 >
-                  <span
-                    className="absolute left-0 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-gold bg-bg-panel"
-                    aria-hidden="true"
-                  />
                   <p className="font-display text-4xl text-gold">{item.step}.</p>
                   <h3 className="mt-2 font-display text-xl text-text-primary md:text-2xl">{item.title}</h3>
                   <p className="mt-3 text-base leading-relaxed text-text-muted">{item.copy}</p>
@@ -418,7 +401,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ContactCTA />
+      <ContactCTA className="border-t-0 pt-0" />
     </div>
   )
 }

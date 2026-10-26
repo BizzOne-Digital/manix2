@@ -20,13 +20,14 @@ export default function ContactPage() {
     <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow="Contact"
-        title="Let's Discuss Your Matter."
+        titleLines={["Let's Discuss Your Matter."]}
         description="Share the general nature of your inquiry. We will respond through appropriate professional channels."
         image={siteImages.contact}
         align="left"
+        compact
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-16">
         <div className="mx-auto grid max-w-[1440px] gap-16 px-5 md:grid-cols-2 md:px-8 lg:px-12">
           <div>
             <Reveal type="slide-left">

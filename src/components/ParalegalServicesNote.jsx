@@ -1,4 +1,5 @@
 import { brand } from '../data/brand'
+import { formatHeadingText } from '../lib/headingText'
 
 export default function ParalegalServicesNote({ className = '' }) {
   return (
@@ -16,7 +17,7 @@ export default function ParalegalServicesNote({ className = '' }) {
         {brand.paralegalSpecializations.map((item) => (
           <li key={item} className="flex gap-2">
             <span className="text-gold" aria-hidden="true">·</span>
-            <span>{item}</span>
+            <span>{formatHeadingText(item)}</span>
           </li>
         ))}
       </ul>

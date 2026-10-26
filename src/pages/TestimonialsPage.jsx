@@ -36,8 +36,8 @@ export default function TestimonialsPage() {
     <div ref={pageRef} className="min-w-0 w-full overflow-x-clip">
       <PageHero
         eyebrow="Testimonials"
-        titleLines={['What clients', 'and partners say.']}
-        description="Feedback on our investigation and information services—professional, clear, and focused on verified findings."
+        titleLines={['What clients & partners say.']}
+        description="Feedback on our investigation and information services, professional, clear, and focused on verified findings."
         image={siteImages.testimonialsHero}
       />
 
@@ -50,7 +50,7 @@ export default function TestimonialsPage() {
                   {testimonialsEmptyMessage}
                 </p>
                 <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-text-muted">
-                  The overview below describes our services—it is not a customer endorsement. When
+                  The overview below describes our services, it is not a customer endorsement. When
                   verified testimonials are supplied, they will appear in this section automatically.
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function TestimonialsPage() {
             {featuredServices.map((s) => (
               <RevealItem key={s.id} className="border-l border-gold/40 pl-6">
                 <p className="font-display text-lg text-text-primary">
-                  {s.number} — {s.title}
+                  {s.number} · {s.title}
                 </p>
                 <p className="mt-2 text-sm text-text-muted">{s.short}</p>
               </RevealItem>

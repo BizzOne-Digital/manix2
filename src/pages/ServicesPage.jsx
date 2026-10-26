@@ -11,6 +11,13 @@ import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { useServicesContent } from '../hooks/useServicesContent'
 import { resolveServiceImageMeta } from '../lib/resolveImageSrc'
 import { usePageMeta } from '../hooks/usePageMeta'
+import { formatServiceTitle } from '../lib/formatServiceTitle'
+
+function serviceNavChipLabel(title) {
+  const formatted = formatServiceTitle(title)
+  const firstWord = formatted.split(/\s+/)[0] || formatted
+  return firstWord.replace(/[,/&]+$/g, '')
+}
 
 export default function ServicesPage() {
   const pageRef = useRef(null)
@@ -60,7 +67,7 @@ export default function ServicesPage() {
               href={`#${s.anchor}`}
               className="shrink-0 rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-text-muted transition-all duration-300 hover:border-gold/40 hover:bg-gold/5 hover:text-gold"
             >
-              {s.number} · {s.title.split(' ')[0]}
+              {s.number} · {serviceNavChipLabel(s.title)}
             </a>
           ))}
         </Reveal>
@@ -76,7 +83,6 @@ export default function ServicesPage() {
           body={service.body}
           image={resolveServiceImageMeta(service)}
           reverse={index % 2 === 1}
-          clientSuppliedNote={service.clientSuppliedNote || ''}
           showClientRate={service.id === 'process-serving'}
         />
       ))}

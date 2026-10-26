@@ -1,3 +1,5 @@
+import { formatHeadingText } from '../lib/headingText'
+
 export function Reveal({
   as: Tag = 'div',
   type = 'fade-up',
@@ -66,7 +68,7 @@ export function HeadlineReveal({ as: Tag = 'h2', className = '', lines }) {
       {lines.map((line) => (
         <span key={line} className="block overflow-visible py-1.5">
           <span data-headline-line className="block leading-[1.2] pb-0.5">
-            {line}
+            {formatHeadingText(line)}
           </span>
         </span>
       ))}

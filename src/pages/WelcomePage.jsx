@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { brand } from '../data/brand'
+import { formatHeadingText } from '../lib/headingText'
 import { siteImages } from '../data/images'
 import { markSiteEntered } from '../components/SiteGate'
 import { useMusic } from '../context/MusicContext'
@@ -54,8 +55,8 @@ export default function WelcomePage() {
           {brand.yearsEyebrow}
         </p>
 
-        <h1 className="mt-5 font-display text-[clamp(1.5rem,4.5vw,2.25rem)] leading-snug text-text-primary">
-          {brand.whatWeDoHeadline}
+        <h1 className="mt-5 max-w-full overflow-x-auto font-display text-[clamp(1.125rem,3.5vw,2.25rem)] leading-snug whitespace-nowrap text-text-primary">
+          {formatHeadingText(brand.whatWeDoHeadline)}
         </h1>
 
         <p className="mt-5 text-sm leading-relaxed text-text-muted md:text-base">

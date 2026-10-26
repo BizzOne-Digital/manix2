@@ -16,7 +16,7 @@ import { usePageMeta } from '../hooks/usePageMeta'
 const values = [
   {
     title: 'Thorough research',
-    copy: 'Investigation begins with disciplined inquiry—following leads, documenting sources, and pursuing depth rather than shortcuts.',
+    copy: 'Investigation begins with disciplined inquiry, following leads, documenting sources, and pursuing depth rather than shortcuts.',
   },
   {
     title: 'Verified information',
@@ -28,7 +28,7 @@ const values = [
   },
   {
     title: 'Informed decisions',
-    copy: 'The objective is useful information that helps you decide how to proceed—not promises about legal outcomes.',
+    copy: 'The objective is useful information that helps you decide how to proceed, not promises about legal outcomes.',
   },
 ]
 
@@ -38,7 +38,7 @@ export default function AboutPage() {
 
   usePageMeta({
     title: `About Us | ${brand.fullName}`,
-    description: `Learn about ${brand.name}—over 40 years in business, research-led investigation, and verified information gathering.`,
+    description: `Learn about ${brand.name}, over 40 years in business, research-led investigation, and verified information gathering.`,
   })
 
   return (
@@ -78,7 +78,7 @@ export default function AboutPage() {
             </RevealItem>
             <RevealItem>
               <p>
-                {brand.fullName} emphasizes depth of investigation—not spectacle. Work is conducted
+                {brand.fullName} emphasizes depth of investigation, not spectacle. Work is conducted
                 with discretion and professionalism, whether the matter involves locating an
                 individual, verifying an application, or understanding financial and corporate
                 relationships within lawful bounds.
@@ -153,7 +153,7 @@ export default function AboutPage() {
           </Reveal>
           <HeadlineReveal
             className="mt-3 font-display text-[clamp(2rem,3.5vw,3rem)]"
-            lines={['Investigators, Counsel, And', 'Professional Support.']}
+            lines={['Investigators, Counsel, &', 'Professional Support.']}
           />
           <Reveal type="fade-up" delay={0.08} className="mt-6 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[17px]">
             Our team includes senior investigators, counsel, and licensed professionals who work with{' '}

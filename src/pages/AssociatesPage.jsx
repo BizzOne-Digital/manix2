@@ -31,7 +31,7 @@ export default function AssociatesPage() {
       <section className="border-b border-white/5 py-16 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
           <Reveal type="fade-up">
-            <p className="text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
+            <p className="text-base leading-relaxed text-text-muted md:text-[17px]">
               Alongside investigators and field specialists, {brand.name} works with paralegals,
               attorneys, and forensic accounting experts so research, legal perspective, and
               financial analysis stay aligned on every file.
@@ -44,7 +44,7 @@ export default function AssociatesPage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
           <HeadlineReveal
-            className="font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),3rem)]"
+            className="font-display text-[clamp(2rem,3.5vw,3rem)]"
             lines={['Meet Our Associates']}
           />
           <div className="mt-12 space-y-10">

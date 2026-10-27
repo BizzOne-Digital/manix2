@@ -18,10 +18,10 @@ export default function WhatWeDoBanner() {
           <SiteEyebrow scale="banner">What We Do</SiteEyebrow>
         </Reveal>
         <HeadlineReveal
-          className="mt-3 max-w-full font-display text-[clamp(1.125rem,calc( * var(--type-vw-scale)),2.875rem)] leading-[1.2] whitespace-nowrap"
+          className="mt-3 max-w-full font-display text-[clamp(1.125rem,2.75vw,2.875rem)] leading-[1.2] whitespace-nowrap"
           lines={[brand.whatWeDoHeadline]}
         />
-        <Reveal type="fade-up" delay={0.08} className="mt-5 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
+        <Reveal type="fade-up" delay={0.08} className="mt-5 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[17px]">
           {brand.whatWeDoSummary}
         </Reveal>
 
@@ -51,7 +51,7 @@ export default function WhatWeDoBanner() {
                   to={`/services#${service.anchor}`}
                   className="block min-w-0 border-l-2 border-gold/50 py-2 pl-2 pr-0 text-left transition-colors hover:border-gold hover:text-gold-light"
                 >
-                  <p className="text-[0.625rem] uppercase tracking-[0.2em] text-gold">{service.number}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{service.number}</p>
                   <p
                     className="what-we-do-service-title mt-1 min-w-0 font-display text-text-primary"
                     title={typeof service.title === 'string' ? service.title : undefined}

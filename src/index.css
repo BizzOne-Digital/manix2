@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --site-type-scale: 1.03;
-  --type-vw-scale: 1.03;
+  --site-type-scale: 1.05;
+  --type-vw-scale: 1.05;
   --color-bg-main: #080808;
   --color-bg-secondary: #121212;
   --color-bg-panel: #191919;
@@ -113,9 +113,46 @@
     );
   }
 
-  /* Section eyebrows — 95% of paired headline; --eyebrow-size-scale trims gold labels sitewide */
+  /* Home hero: main title largest; gold eyebrow 5% smaller */
+  .hero-title-block {
+    --display-title-size: clamp(
+      1.375rem,
+      calc(4.2vw * var(--type-vw-scale)),
+      2.875rem
+    );
+  }
+
+  .hero-title-block > h1 {
+    font-size: var(--display-title-size);
+  }
+
+  .hero-title-block > .site-eyebrow {
+    font-size: calc(var(--display-title-size) * 0.95);
+    letter-spacing: 0.06em;
+    color: color-mix(in srgb, var(--color-gold-light) 92%, transparent);
+  }
+
+  /* Inner page heroes */
+  .page-hero-title-stack {
+    --display-title-size: clamp(
+      1.85rem,
+      calc(7vw * var(--type-vw-scale)),
+      4rem
+    );
+  }
+
+  .page-hero-title-stack > h1 {
+    font-size: var(--display-title-size);
+  }
+
+  .page-hero-title-stack > .site-eyebrow {
+    font-size: calc(var(--display-title-size) * 0.95);
+    letter-spacing: 0.08em;
+  }
+
+  /* Section eyebrows — 95% of paired display headline (5% smaller than main title) */
   .site-eyebrow {
-    --eyebrow-size-scale: 0.9;
+    --eyebrow-size-scale: 1;
     font-family: var(--font-display);
     font-weight: 500;
     line-height: 1.12;
@@ -252,9 +289,27 @@
     letter-spacing: 0.08em;
   }
 
+  .welcome-title-block {
+    --display-title-size: clamp(
+      0.625rem,
+      calc(2.65vw * var(--type-vw-scale)),
+      2.25rem
+    );
+  }
+
+  .welcome-title-block .welcome-headline {
+    font-size: var(--display-title-size);
+  }
+
+  .welcome-title-block > .site-eyebrow {
+    font-size: calc(var(--display-title-size) * 0.95);
+    letter-spacing: 0.08em;
+    color: var(--color-gold);
+  }
+
   /* Welcome gate: one full headline line, scales with viewport (no cqi — avoids runaway size) */
   .welcome-headline {
-    font-size: clamp(0.625rem, 2.65vw, 2.25rem);
+    font-size: clamp(0.625rem, calc(2.65vw * var(--type-vw-scale)), 2.25rem);
     line-height: 1.2;
     white-space: nowrap;
   }

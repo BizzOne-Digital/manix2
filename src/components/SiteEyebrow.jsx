@@ -5,7 +5,7 @@ export default function SiteEyebrow({ children, scale = 'section-lg', className 
   const Tag = as
   return (
     <Tag
-      className={['site-eyebrow', `site-eyebrow--${scale}`, className].filter(Boolean).join(' ')}
+      className={['site-eyebrow', scale ? `site-eyebrow--${scale}` : '', className].filter(Boolean).join(' ')}
       {...rest}
     >
       {children}

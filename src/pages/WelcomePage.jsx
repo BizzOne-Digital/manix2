@@ -52,13 +52,15 @@ export default function WelcomePage() {
           className="mx-auto h-auto w-full max-w-[min(280px,72vw)] object-contain"
         />
 
-        <SiteEyebrow scale="hero" className="mt-8 w-full">
-          {brand.yearsEyebrow}
-        </SiteEyebrow>
+        <div className="welcome-title-block w-full">
+          <SiteEyebrow scale={null} className="mt-8 w-full">
+            {brand.yearsEyebrow}
+          </SiteEyebrow>
 
-        <h1 className="welcome-headline mt-5 w-full min-w-0 font-display text-text-primary">
-          {formatHeadingText(brand.whatWeDoHeadline)}
-        </h1>
+          <h1 className="welcome-headline mt-5 w-full min-w-0 font-display text-text-primary">
+            {formatHeadingText(brand.whatWeDoHeadline)}
+          </h1>
+        </div>
 
         <p className="mt-5 w-full text-sm leading-relaxed text-text-muted md:text-base">
           {brand.whatWeDoSummary}

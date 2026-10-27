@@ -131,7 +131,7 @@ export default function HomePage() {
           data-hero-float
           className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col justify-center px-4 pb-24 pt-32 sm:px-5 sm:pb-28 sm:pt-36 md:px-10 md:pb-32 md:pt-40 lg:px-16 lg:pt-44"
         >
-          <div className="min-w-0 w-full max-w-3xl">
+          <div className="hero-title-block min-w-0 w-full max-w-3xl">
             <SiteEyebrow data-hero-eyebrow scale="hero" className="mb-2">
               {brand.yearsEyebrow}
             </SiteEyebrow>
@@ -186,7 +186,7 @@ export default function HomePage() {
             </Reveal>
             <RevealLine className="my-5 max-w-xs" />
             <HeadlineReveal
-              className="font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),3.5rem)] leading-tight"
+              className="font-display text-[clamp(2rem,4vw,3.5rem)] leading-tight"
               lines={['Clarity Before Your', 'Next Decision.']}
             />
             <Reveal type="blur-in" delay={0.15} className="mt-6 block">
@@ -222,7 +222,7 @@ export default function HomePage() {
               delay={0.25}
               className="absolute bottom-0 left-0 sm:-bottom-4 sm:-left-4"
             >
-              <span className="block border border-gold/40 bg-bg-main px-3 py-2.5 text-[0.625rem] uppercase tracking-[0.2em] text-gold sm:px-4 sm:py-3 sm:text-xs sm:tracking-[0.25em]">
+              <span className="block border border-gold/40 bg-bg-main px-3 py-2.5 text-[10px] uppercase tracking-[0.2em] text-gold sm:px-4 sm:py-3 sm:text-xs sm:tracking-[0.25em]">
                 Research · Verify · Decide
               </span>
             </Reveal>
@@ -238,7 +238,7 @@ export default function HomePage() {
                 <SiteEyebrow scale="section-lg-tight">Services</SiteEyebrow>
               </Reveal>
               <HeadlineReveal
-                className="mt-3 font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),3.25rem)]"
+                className="mt-3 font-display text-[clamp(2rem,4vw,3.25rem)]"
                 lines={['Featured Capabilities']}
               />
             </div>
@@ -308,7 +308,7 @@ export default function HomePage() {
             <SiteEyebrow scale="section-md">Who We Help</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
-            className="mt-3 max-w-2xl font-display text-[clamp(2.125rem,calc( * var(--type-vw-scale)),3.25rem)]"
+            className="mt-3 max-w-2xl font-display text-[clamp(2.125rem,4.5vw,3.25rem)]"
             lines={['Professions We Serve']}
           />
           <RevealStagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -345,11 +345,11 @@ export default function HomePage() {
             </Reveal>
             <RevealLine className="my-5 max-w-sm" />
             <HeadlineReveal
-              className="font-display text-[clamp(1.875rem,calc( * var(--type-vw-scale)),2.875rem)] leading-snug"
+              className="font-display text-[clamp(1.875rem,3.75vw,2.875rem)] leading-snug"
               lines={['Licensed Professionals On Your Side']}
             />
             <Reveal type="fade-up" delay={0.12} className="mt-6 block">
-              <p className="text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
+              <p className="text-base leading-relaxed text-text-muted md:text-[17px]">
                 {brand.partnersSummary} Nothing on this site establishes an attorney-client
                 relationship.
               </p>
@@ -374,7 +374,7 @@ export default function HomePage() {
                 <SiteEyebrow scale="section-md">Approach</SiteEyebrow>
               </Reveal>
               <HeadlineReveal
-                className="mt-3 font-display text-[clamp(2.125rem,calc( * var(--type-vw-scale)),3.25rem)]"
+                className="mt-3 font-display text-[clamp(2.125rem,4.5vw,3.25rem)]"
                 lines={['How We Work']}
               />
               <Reveal type="fade-up" delay={0.1} className="mt-6 block max-w-md text-base leading-relaxed text-text-muted">

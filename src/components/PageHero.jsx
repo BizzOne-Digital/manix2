@@ -100,20 +100,22 @@ export default function PageHero({
           align === 'center' ? 'items-center text-center' : 'items-start text-left',
         ].join(' ')}
       >
-        {eyebrow ? (
-          <SiteEyebrow data-hero-eyebrow scale="page" className="mb-5">
-            {eyebrow}
-          </SiteEyebrow>
-        ) : null}
-        <h1 className="max-w-3xl font-display text-[clamp(1.85rem,calc( * var(--type-vw-scale)),4rem)] font-medium leading-[1.18] tracking-[-0.01em] text-text-primary text-left">
-          {lines.map((line, i) => (
-            <span key={i} className="block overflow-hidden pt-0.5 pb-1.5">
-              <span data-hero-title-line className="block pb-0.5">
-                {formatHeadingText(line)}
+        <div className="page-hero-title-stack max-w-3xl">
+          {eyebrow ? (
+            <SiteEyebrow data-hero-eyebrow scale="page" className="mb-5">
+              {eyebrow}
+            </SiteEyebrow>
+          ) : null}
+          <h1 className="font-display font-medium leading-[1.18] tracking-[-0.01em] text-text-primary text-left">
+            {lines.map((line, i) => (
+              <span key={i} className="block overflow-hidden pt-0.5 pb-1.5">
+                <span data-hero-title-line className="block pb-0.5">
+                  {formatHeadingText(line)}
+                </span>
               </span>
-            </span>
-          ))}
-        </h1>
+            ))}
+          </h1>
+        </div>
         {description ? (
           <p
             data-hero-desc

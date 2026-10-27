@@ -98,7 +98,7 @@ export default function ServiceSection({
               {number}
             </p>
             <div className="mt-2 w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <h2 className="w-max max-w-none whitespace-nowrap font-display text-[clamp(1rem,calc( * var(--type-vw-scale)),3rem)] leading-[1.15] pb-1 text-text-primary">
+              <h2 className="w-max max-w-none whitespace-nowrap font-display text-[clamp(1rem,2.1vw,3rem)] leading-[1.15] pb-1 text-text-primary">
                 {displayTitle}
               </h2>
             </div>
@@ -108,7 +108,7 @@ export default function ServiceSection({
             className={reverse ? 'lg:order-2' : 'lg:order-1'}
           >
             <p className="text-lg leading-relaxed text-gold-light/90 md:text-xl">{summary}</p>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-text-muted md:text-[17px]">
               {body.map((paragraph, i) => (
                 <p key={i} data-service-paragraph>
                   {paragraph}

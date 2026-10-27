@@ -36,7 +36,7 @@ export default function ContactPage() {
             </Reveal>
             <RevealLine className="my-5 max-w-xs" />
             <HeadlineReveal
-              className="font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),2.5rem)]"
+              className="font-display text-[clamp(2rem,3vw,2.5rem)]"
               lines={['Reach our team directly']}
             />
             <Reveal type="fade-up" delay={0.1} className="mt-8 block space-y-8">

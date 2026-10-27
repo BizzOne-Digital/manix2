@@ -53,11 +53,11 @@ export default function ContactCTA({
           </Reveal>
           <RevealLine className="mb-5 max-w-xs" />
           <HeadlineReveal
-            className="max-w-3xl font-display text-[clamp(2.125rem,calc( * var(--type-vw-scale)),3.5rem)] leading-tight text-text-primary"
+            className="max-w-3xl font-display text-[clamp(2.125rem,4.5vw,3.5rem)] leading-tight text-text-primary"
             lines={headingLines}
           />
           <Reveal type="blur-in" delay={0.12} className="mt-5 block">
-            <p className="max-w-xl text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
+            <p className="max-w-xl text-base leading-relaxed text-text-muted md:text-[17px]">
               {description}
             </p>
           </Reveal>

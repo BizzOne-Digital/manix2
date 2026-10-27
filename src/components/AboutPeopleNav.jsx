@@ -13,7 +13,7 @@ export default function AboutPeopleNav({ className = '' }) {
         className,
       ].join(' ')}
     >
-      <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
+      <p className="text-[0.625rem] font-semibold uppercase tracking-[0.28em] text-gold">
         Jump to
       </p>
       <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">

@@ -65,7 +65,7 @@ export default function AboutPage() {
             </Reveal>
             <RevealLine className="my-5 max-w-xs" />
             <HeadlineReveal
-              className="font-display text-[clamp(2rem,3.5vw,3rem)] leading-tight"
+              className="font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),3rem)] leading-tight"
               lines={['Experience returned to', 'professional work.']}
             />
             <RevealStagger className="mt-8 space-y-5 text-base leading-relaxed text-text-muted">
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <SiteEyebrow scale="section-sm">Values</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
-            className="mt-3 font-display text-[clamp(2rem,3vw,2.75rem)]"
+            className="mt-3 font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),2.75rem)]"
             lines={['What guides our work']}
           />
           <RevealStagger className="mt-12 grid gap-8 md:grid-cols-2">
@@ -153,10 +153,10 @@ export default function AboutPage() {
             <SiteEyebrow scale="section-md-page">Team & Associates</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
-            className="mt-3 font-display text-[clamp(2rem,3.5vw,3rem)]"
+            className="mt-3 font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),3rem)]"
             lines={['Investigators, Counsel, &', 'Professional Support.']}
           />
-          <Reveal type="fade-up" delay={0.08} className="mt-6 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[17px]">
+          <Reveal type="fade-up" delay={0.08} className="mt-6 block max-w-3xl text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
             Our team includes senior investigators, counsel, and licensed professionals who work with{' '}
             {brand.name} on skip tracing, forensic claims, litigation support, and client-facing
             legal services. See the{' '}

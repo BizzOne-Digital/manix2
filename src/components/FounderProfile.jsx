@@ -14,7 +14,7 @@ export default function FounderProfile() {
 
       <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-16">
         <div className="min-w-0">
-          <p className="font-display text-[clamp(3rem,12vw,5.5rem)] leading-none tracking-tight text-gold/90">
+          <p className="font-display text-[clamp(3rem,calc( * var(--type-vw-scale)),5.5rem)] leading-none tracking-tight text-gold/90">
             {founderProfile.displayName}
           </p>
           <Reveal type="fade-up" className="mt-4 block">
@@ -64,7 +64,7 @@ export default function FounderProfile() {
       {sections.map((section) => (
         <div key={section.id} className="mt-16 border-t border-white/10 pt-16 md:mt-20 md:pt-20">
           <HeadlineReveal
-            className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] text-text-primary"
+            className="font-display text-[clamp(1.75rem,calc( * var(--type-vw-scale)),2.5rem)] text-text-primary"
             lines={[section.title]}
           />
           <RevealStagger className="mt-8 max-w-3xl space-y-5 text-sm leading-relaxed text-text-muted md:text-base">

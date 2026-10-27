@@ -28,7 +28,7 @@ export default function AdminLoginPage() {
         onSubmit={onSubmit}
         className="w-full max-w-md border border-white/10 bg-bg-secondary p-8"
       >
-        <p className="text-[10px] uppercase tracking-[0.3em] text-gold">Admin</p>
+        <p className="text-[0.625rem] uppercase tracking-[0.3em] text-gold">Admin</p>
         <h1 className="mt-2 font-display text-2xl">Sign in</h1>
         <label className="mt-8 block text-xs uppercase tracking-[0.2em] text-text-muted">
           Password

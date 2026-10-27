@@ -58,7 +58,7 @@ export default function Footer() {
                 loading="lazy"
               />
             </Link>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-text-muted md:text-[15px] md:leading-relaxed">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-text-muted md:text-[0.9375rem] md:leading-relaxed">
               {brand.whatWeDoSummary}
             </p>
             <p className="mt-3 max-w-md text-xs leading-relaxed text-text-muted">
@@ -74,7 +74,7 @@ export default function Footer() {
 
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-4 lg:pl-6">
             <div>
-              <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
+              <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Navigate
               </p>
               <ul className="space-y-3.5">
@@ -86,7 +86,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              <p className="mb-4 mt-8 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
+              <p className="mb-4 mt-8 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Bios & profiles
               </p>
               <ul className="space-y-2.5">
@@ -104,7 +104,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
+              <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Services
               </p>
               <ul className="space-y-2.5 text-sm text-text-muted">
@@ -123,12 +123,12 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3 lg:border-l lg:border-white/10 lg:pl-10">
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
+            <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-gold">
               Contact
             </p>
             <div className="space-y-6">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.22em] text-text-muted">Email</p>
+                <p className="text-[0.625rem] uppercase tracking-[0.22em] text-text-muted">Email</p>
                 <a
                   href={brand.mailto}
                   className="mt-2 block font-display text-xl text-text-primary transition-colors hover:text-gold md:text-2xl"
@@ -137,7 +137,7 @@ export default function Footer() {
                 </a>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.22em] text-text-muted">Phone</p>
+                <p className="text-[0.625rem] uppercase tracking-[0.22em] text-text-muted">Phone</p>
                 <a
                   href={brand.phoneTel}
                   className="mt-2 block font-display text-xl text-text-primary transition-colors hover:text-gold md:text-2xl"
@@ -158,10 +158,10 @@ export default function Footer() {
 
       <div className="border-t border-white/10 bg-bg-panel/80">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-5 py-8 md:flex-row md:items-start md:justify-between md:gap-8 md:px-10 lg:px-14">
-          <p className="max-w-3xl text-xs leading-relaxed text-text-muted md:text-[13px]">
+          <p className="max-w-3xl text-xs leading-relaxed text-text-muted md:text-[0.8125rem]">
             {brand.disclaimer}
           </p>
-          <p className="shrink-0 text-xs text-text-muted md:text-right md:text-[13px]">
+          <p className="shrink-0 text-xs text-text-muted md:text-right md:text-[0.8125rem]">
             © {year} {brand.fullName}. All rights reserved.
           </p>
         </div>

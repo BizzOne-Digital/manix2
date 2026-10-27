@@ -70,7 +70,7 @@ export default function AdminBookingsPage() {
               </div>
               <span
                 className={[
-                  'text-[10px] uppercase tracking-[0.2em]',
+                  'text-[0.625rem] uppercase tracking-[0.2em]',
                   b.status === 'new' ? 'text-gold' : 'text-text-muted',
                 ].join(' ')}
               >
@@ -83,7 +83,7 @@ export default function AdminBookingsPage() {
               </p>
             ) : null}
             <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-text-muted">{b.message}</p>
-            <p className="mt-3 text-[11px] text-text-muted">
+            <p className="mt-3 text-[0.6875rem] text-text-muted">
               {b.createdAt ? new Date(b.createdAt).toLocaleString() : ''}
             </p>
             {b.status === 'new' ? (

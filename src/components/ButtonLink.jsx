@@ -34,7 +34,7 @@ export default function ButtonLink({
       ref={magneticRef}
       to={to}
       className={[
-        'group inline-flex items-center justify-center rounded-sm px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-[background,border-color,color,transform,filter] duration-300 will-change-transform',
+        'group inline-flex items-center justify-center rounded-sm px-6 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] transition-[background,border-color,color,transform,filter] duration-300 will-change-transform',
         variants[variant],
         className,
       ].join(' ')}
@@ -63,7 +63,7 @@ export function ButtonExternal({
       ref={magneticRef}
       href={href}
       className={[
-        'group inline-flex items-center justify-center rounded-sm px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-[background,border-color,color] duration-300 will-change-transform',
+        'group inline-flex items-center justify-center rounded-sm px-6 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] transition-[background,border-color,color] duration-300 will-change-transform',
         variants[variant],
         className,
       ].join(' ')}

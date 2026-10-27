@@ -93,7 +93,7 @@ export default function TestimonialsPage() {
             <SiteEyebrow scale="section-sm">Service overview</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
-            className="mt-3 font-display text-[clamp(2rem,3vw,2.75rem)]"
+            className="mt-3 font-display text-[clamp(2rem,calc( * var(--type-vw-scale)),2.75rem)]"
             lines={['How we support', 'informed decisions']}
           />
           <RevealStagger className="mt-10 grid gap-6 md:grid-cols-2">

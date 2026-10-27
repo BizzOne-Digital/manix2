@@ -26,7 +26,7 @@ export default function AdminLayout() {
         <header className="border-b border-white/10 bg-bg-secondary">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-gold">Mannix Admin</p>
+              <p className="text-[0.625rem] uppercase tracking-[0.3em] text-gold">Mannix Admin</p>
               <Link to="/" className="text-sm text-text-muted hover:text-gold">
                 View public site
               </Link>

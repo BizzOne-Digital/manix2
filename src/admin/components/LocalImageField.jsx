@@ -90,7 +90,7 @@ export default function LocalImageField({
           ) : null}
         </div>
       </div>
-      <p className="mt-2 text-[11px] text-text-muted">PNG, JPEG, WebP, or GIF, max 8MB</p>
+      <p className="mt-2 text-[0.6875rem] text-text-muted">PNG, JPEG, WebP, or GIF, max 8MB</p>
     </div>
   )
 }

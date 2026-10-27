@@ -197,14 +197,14 @@ export default function InquiryForm() {
       <div className="flex flex-wrap gap-4">
         <button
           type="submit"
-          className="rounded-sm btn-gold-fill px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-bg-main transition-[filter] hover:brightness-105"
+          className="rounded-sm btn-gold-fill px-8 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-bg-main transition-[filter] hover:brightness-105"
         >
           {submitState === 'sending' ? 'Sending…' : 'Submit inquiry'}
         </button>
         <button
           type="button"
           onClick={onCopy}
-          className="rounded-sm border border-white/15 px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-primary transition-colors hover:border-gold/40 hover:text-gold"
+          className="rounded-sm border border-white/15 px-8 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-text-primary transition-colors hover:border-gold/40 hover:text-gold"
         >
           {copyState === 'copied'
             ? 'Copied to clipboard'

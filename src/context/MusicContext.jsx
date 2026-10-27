@@ -188,7 +188,7 @@ export function MusicToggle({ className = '' }) {
         aria-pressed={playing}
         aria-label={playing ? 'Pause background music' : 'Play background music'}
         className={[
-          'flex items-center gap-2 border px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors touch-manipulation',
+          'flex items-center gap-2 border px-3 py-2.5 text-[0.625rem] font-semibold uppercase tracking-[0.18em] transition-colors touch-manipulation',
           playing
             ? 'border-gold bg-gold/15 text-gold-light'
             : 'border-white/15 bg-bg-main/90 text-text-muted backdrop-blur-md hover:border-gold/40 hover:text-gold',

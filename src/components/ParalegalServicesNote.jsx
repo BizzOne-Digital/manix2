@@ -11,10 +11,10 @@ export default function ParalegalServicesNote({ className = '' }) {
       ].join(' ')}
     >
       <SiteEyebrow scale="panel">Paralegal Services</SiteEyebrow>
-      <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[17px]">
+      <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
         {brand.paralegalIntro}
       </p>
-      <ul className="mt-4 space-y-2.5 text-base text-text-primary md:text-[17px]">
+      <ul className="mt-4 space-y-2.5 text-base text-text-primary md:text-[1.0625rem]">
         {brand.paralegalSpecializations.map((item) => (
           <li key={item} className="flex gap-2">
             <span className="text-gold" aria-hidden="true">·</span>

@@ -43,7 +43,7 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 md:grid-cols-2 md:px-8 lg:px-12">
           <Reveal type="fade-up" className="block border border-gold/30 bg-bg-panel/50 p-6 md:p-8">
             <SiteEyebrow scale="panel">Nationwide coverage</SiteEyebrow>
-            <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[17px]">
+            <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[1.0625rem]">
               {brand.processServersNote}
             </p>
           </Reveal>

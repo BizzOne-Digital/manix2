@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
+  --site-type-scale: 1.03;
+  --type-vw-scale: 1.03;
   --color-bg-main: #080808;
   --color-bg-secondary: #121212;
   --color-bg-panel: #191919;
@@ -23,6 +25,7 @@
     scroll-behavior: smooth;
     overflow-x: clip;
     width: 100%;
+    font-size: calc(100% * var(--site-type-scale));
   }
 
   @media (prefers-reduced-motion: reduce) {

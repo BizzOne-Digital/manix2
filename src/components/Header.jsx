@@ -47,7 +47,7 @@ function NavLinkContent({ label, isActive, transparent }) {
   return (
     <span
       className={[
-        'group relative inline-block text-[15px] font-medium tracking-[0.05em] transition-colors duration-300 md:text-base',
+        'group relative inline-block text-[0.9375rem] font-medium tracking-[0.05em] transition-colors duration-300 md:text-base',
         isActive
           ? 'text-gold-light'
           : transparent
@@ -193,7 +193,7 @@ export default function Header({ transparentAtTop = false }) {
                 <Link
                   to={ctaNav.path}
                   onClick={closeMenu}
-                  className="mt-2 inline-flex w-fit max-w-full border border-gold px-5 py-3 text-center text-[10px] uppercase tracking-[0.2em] text-gold sm:text-xs"
+                  className="mt-2 inline-flex w-fit max-w-full border border-gold px-5 py-3 text-center text-[0.625rem] uppercase tracking-[0.2em] text-gold sm:text-xs"
                 >
                   {ctaNav.label}
                 </Link>
@@ -246,7 +246,7 @@ export default function Header({ transparentAtTop = false }) {
             <Link
               to={ctaNav.path}
               className={[
-                'hidden border px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 sm:inline-flex md:px-5 md:py-2.5 md:text-[13px] md:tracking-[0.2em]',
+                'hidden border px-4 py-2 text-[0.625rem] font-semibold uppercase tracking-[0.18em] transition-all duration-300 sm:inline-flex md:px-5 md:py-2.5 md:text-[0.8125rem] md:tracking-[0.2em]',
                 transparent
                   ? 'border-gold/80 text-gold hover:border-gold hover:bg-gold/10'
                   : 'border-gold/60 text-gold hover:border-gold hover:bg-gold/10',

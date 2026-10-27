@@ -64,7 +64,7 @@ export default function WelcomePage() {
           {brand.whatWeDoSummary}
         </p>
 
-        <ul className="mt-8 space-y-2 text-left text-xs uppercase tracking-[0.16em] text-gold/90 md:text-[11px]">
+        <ul className="mt-8 space-y-2 text-left text-xs uppercase tracking-[0.16em] text-gold/90 md:text-[0.6875rem]">
           {brand.coreOfferings.map((item) => (
             <li key={item} className="flex items-start gap-2">
               <span className="mt-1.5 h-px w-4 shrink-0 bg-gold/70" aria-hidden="true" />
@@ -82,7 +82,7 @@ export default function WelcomePage() {
         </button>
 
         {musicAvailable ? (
-          <p className="mt-4 self-center text-center text-[10px] leading-relaxed text-text-muted">
+          <p className="mt-4 self-center text-center text-[0.625rem] leading-relaxed text-text-muted">
             Background music will begin when you enter (you can turn it off anytime).
           </p>
         ) : null}

@@ -105,7 +105,7 @@ export default function PageHero({
             {eyebrow}
           </SiteEyebrow>
         ) : null}
-        <h1 className="max-w-3xl font-display text-[clamp(1.85rem,7vw,4rem)] font-medium leading-[1.18] tracking-[-0.01em] text-text-primary text-left">
+        <h1 className="max-w-3xl font-display text-[clamp(1.85rem,calc( * var(--type-vw-scale)),4rem)] font-medium leading-[1.18] tracking-[-0.01em] text-text-primary text-left">
           {lines.map((line, i) => (
             <span key={i} className="block overflow-hidden pt-0.5 pb-1.5">
               <span data-hero-title-line className="block pb-0.5">

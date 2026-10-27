@@ -3,7 +3,7 @@ import { brand } from '../data/brand'
 import { useReducedMotion } from '../hooks/useMedia'
 
 const labelClass =
-  'whitespace-nowrap text-[8px] font-medium uppercase tracking-[0.28em] text-gold sm:text-[9px] sm:tracking-[0.32em] md:text-[10px] md:tracking-[0.38em]'
+  'whitespace-nowrap text-[0.5rem] font-medium uppercase tracking-[0.28em] text-gold sm:text-[0.5625rem] sm:tracking-[0.32em] md:text-[0.625rem] md:tracking-[0.38em]'
 
 const separatorClass =
   'shrink-0 select-none px-6 text-gold/50 sm:px-10 md:px-14 lg:px-16'

@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useIsMobile, useReducedMotion } from '../hooks/useMedia'
 import { formatHeadingText } from '../lib/headingText'
+import SiteEyebrow from './SiteEyebrow'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -100,12 +101,9 @@ export default function PageHero({
         ].join(' ')}
       >
         {eyebrow ? (
-          <p
-            data-hero-eyebrow
-            className="mb-5 text-xs uppercase tracking-[0.35em] text-gold"
-          >
+          <SiteEyebrow data-hero-eyebrow scale="page" className="mb-5">
             {eyebrow}
-          </p>
+          </SiteEyebrow>
         ) : null}
         <h1 className="max-w-3xl font-display text-[clamp(1.85rem,7vw,4rem)] font-medium leading-[1.18] tracking-[-0.01em] text-text-primary text-left">
           {lines.map((line, i) => (

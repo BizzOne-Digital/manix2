@@ -5,6 +5,7 @@ import ButtonLink from '../components/ButtonLink'
 import ContactCTA from '../components/ContactCTA'
 import WhatWeDoBanner from '../components/WhatWeDoBanner'
 import HeroHeadline from '../components/HeroHeadline'
+import SiteEyebrow from '../components/SiteEyebrow'
 import HeroServiceTicker from '../components/HeroServiceTicker'
 import { ChevronDownIcon } from '../components/HeroVisuals'
 import {
@@ -131,12 +132,9 @@ export default function HomePage() {
           className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col justify-center px-4 pb-24 pt-32 sm:px-5 sm:pb-28 sm:pt-36 md:px-10 md:pb-32 md:pt-40 lg:px-16 lg:pt-44"
         >
           <div className="min-w-0 w-full max-w-3xl">
-            <p
-              data-hero-eyebrow
-              className="mb-2 text-[11px] font-medium uppercase tracking-[0.28em] text-gold-light/90 sm:tracking-[0.38em] md:text-xs md:tracking-[0.45em]"
-            >
+            <SiteEyebrow data-hero-eyebrow scale="hero" className="mb-2">
               {brand.yearsEyebrow}
-            </p>
+            </SiteEyebrow>
             <HeroHeadline />
             <p
               data-hero-support
@@ -184,7 +182,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 md:grid-cols-2 md:items-center md:px-8 lg:gap-20 lg:px-12">
           <div>
             <Reveal type="slide-left" delay={0}>
-              <p className="text-xs uppercase tracking-[0.3em] text-gold">Introduction</p>
+              <SiteEyebrow scale="section-lg">Introduction</SiteEyebrow>
             </Reveal>
             <RevealLine className="my-5 max-w-xs" />
             <HeadlineReveal
@@ -237,7 +235,7 @@ export default function HomePage() {
           <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <Reveal type="fade-up">
-                <p className="text-xs uppercase tracking-[0.3em] text-gold">Services</p>
+                <SiteEyebrow scale="section-lg-tight">Services</SiteEyebrow>
               </Reveal>
               <HeadlineReveal
                 className="mt-3 font-display text-[clamp(2rem,4vw,3.25rem)]"
@@ -307,7 +305,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-bg-secondary/88" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
           <Reveal type="clip-up">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Who We Help</p>
+            <SiteEyebrow scale="section-md">Who We Help</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
             className="mt-3 max-w-2xl font-display text-[clamp(2.125rem,4.5vw,3.25rem)]"
@@ -343,7 +341,7 @@ export default function HomePage() {
           </RevealImage>
           <div className="order-1 flex flex-col justify-center md:order-2">
             <Reveal type="slide-right">
-              <p className="text-xs uppercase tracking-[0.3em] text-gold">Partners & Associates</p>
+              <SiteEyebrow scale="section-md-snug">Partners & Associates</SiteEyebrow>
             </Reveal>
             <RevealLine className="my-5 max-w-sm" />
             <HeadlineReveal
@@ -373,7 +371,7 @@ export default function HomePage() {
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <Reveal type="fade-up">
-                <p className="text-xs uppercase tracking-[0.3em] text-gold">Approach</p>
+                <SiteEyebrow scale="section-md">Approach</SiteEyebrow>
               </Reveal>
               <HeadlineReveal
                 className="mt-3 font-display text-[clamp(2.125rem,4.5vw,3.25rem)]"

@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero'
 import ServiceSection from '../components/ServiceSection'
 import ContactCTA from '../components/ContactCTA'
 import ParalegalServicesNote from '../components/ParalegalServicesNote'
+import SiteEyebrow from '../components/SiteEyebrow'
 import { Reveal } from '../components/Reveal'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
@@ -41,7 +42,7 @@ export default function ServicesPage() {
       <section className="border-b border-white/5 bg-bg-secondary py-12 md:py-16">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 md:grid-cols-2 md:px-8 lg:px-12">
           <Reveal type="fade-up" className="block border border-gold/30 bg-bg-panel/50 p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-gold">Nationwide coverage</p>
+            <SiteEyebrow scale="panel">Nationwide coverage</SiteEyebrow>
             <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[17px]">
               {brand.processServersNote}
             </p>

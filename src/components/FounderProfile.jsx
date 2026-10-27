@@ -1,6 +1,7 @@
 import { HeadlineReveal, Reveal, RevealItem, RevealLine, RevealStagger } from './Reveal'
 import { founderProfile } from '../data/founder'
 import { siteImages } from '../data/images'
+import SiteEyebrow from './SiteEyebrow'
 
 export default function FounderProfile() {
   const { opening, sections, standard, signoff } = founderProfile
@@ -8,7 +9,7 @@ export default function FounderProfile() {
   return (
     <div className="mx-auto max-w-[1440px] px-5 lg:px-12">
       <Reveal type="clip-up">
-        <p className="text-xs uppercase tracking-[0.3em] text-gold">{founderProfile.eyebrow}</p>
+        <SiteEyebrow scale="section-founder">{founderProfile.eyebrow}</SiteEyebrow>
       </Reveal>
 
       <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-16">
@@ -95,7 +96,7 @@ export default function FounderProfile() {
         />
         <div className="relative z-10 mx-auto max-w-3xl px-6 md:px-10">
           <Reveal type="fade-up">
-            <p className="text-xs uppercase tracking-[0.35em] text-gold">{standard.title}</p>
+            <SiteEyebrow scale="section-sm-tight">{standard.title}</SiteEyebrow>
           </Reveal>
           <Reveal type="fade-up" delay={0.06} className="mt-6 block text-base text-text-muted">
             {standard.intro}

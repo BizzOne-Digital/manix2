@@ -6,6 +6,7 @@ import { siteImages } from '../data/images'
 import { markSiteEntered } from '../components/SiteGate'
 import { useMusic } from '../context/MusicContext'
 import { usePageMeta } from '../hooks/usePageMeta'
+import SiteEyebrow from '../components/SiteEyebrow'
 
 export default function WelcomePage() {
   const navigate = useNavigate()
@@ -51,9 +52,9 @@ export default function WelcomePage() {
           className="mx-auto h-auto w-full max-w-[min(280px,72vw)] object-contain"
         />
 
-        <p className="mt-8 w-full text-[10px] font-medium uppercase tracking-[0.35em] text-gold">
+        <SiteEyebrow scale="hero" className="mt-8 w-full">
           {brand.yearsEyebrow}
-        </p>
+        </SiteEyebrow>
 
         <h1 className="welcome-headline mt-5 w-full min-w-0 font-display text-text-primary">
           {formatHeadingText(brand.whatWeDoHeadline)}

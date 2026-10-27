@@ -3,6 +3,7 @@ import ButtonLink from './ButtonLink'
 import { HeadlineReveal, Reveal, RevealLine } from './Reveal'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
+import SiteEyebrow from './SiteEyebrow'
 
 export default function ContactCTA({
   heading = "Let's Discuss Your Matter",
@@ -48,7 +49,7 @@ export default function ContactCTA({
       <div className="relative z-10 mx-auto grid min-w-0 max-w-[1440px] gap-8 px-4 py-12 sm:px-5 sm:py-14 md:grid-cols-[1.2fr_1fr] md:items-start md:gap-10 md:px-8 lg:px-12 lg:py-16">
         <div className="min-w-0">
           <Reveal type="slide-left">
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Inquiry</p>
+            <SiteEyebrow scale="section-xl" className="mb-3">Inquiry</SiteEyebrow>
           </Reveal>
           <RevealLine className="mb-5 max-w-xs" />
           <HeadlineReveal

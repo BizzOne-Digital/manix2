@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import ButtonLink from './ButtonLink'
+import SiteEyebrow from './SiteEyebrow'
 import { brand } from '../data/brand'
 import { featuredServices } from '../data/services'
 import { aboutMenu, ctaNav, footerNav } from '../data/navigation'
@@ -63,9 +64,9 @@ export default function Footer() {
             <p className="mt-3 max-w-md text-xs leading-relaxed text-text-muted">
               {brand.processServersNote}
             </p>
-            <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.35em] text-gold/80">
+            <SiteEyebrow scale="footer" className="mt-4">
               {brand.yearsEyebrow}
-            </p>
+            </SiteEyebrow>
             <ButtonLink to={ctaNav.path} variant="secondary" className="mt-8" showArrow>
               {ctaNav.label}
             </ButtonLink>

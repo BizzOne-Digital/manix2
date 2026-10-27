@@ -16,7 +16,7 @@ export const brand = {
   tagline: 'Investigation & Legal Services',
   ...brandContact,
   yearsEyebrow: 'OVER 40 YEARS IN BUSINESS',
-  heroHeadline: 'Celebrated Award Winning Commercial Investigators',
+  heroHeadline: 'Celebrated & Award Winning Commercial Investigators',
   whatWeDoHeadline: 'Investigation, Process Serving & Legal Support',
   whatWeDoSummary:
     'Mannix Investigation & Legal Services helps lawyers, businesses, and individuals locate people, serve documents, verify backgrounds, and investigate assets, with disciplined research and clear reporting across Canada.',

@@ -31,7 +31,7 @@ export default function HeroHeadline({ className = '' }) {
         className,
       ].join(' ')}
     >
-      <span data-line className="block pt-0.5 pb-1.5 text-text-primary">Celebrated Award Winning</span>
+      <span data-line className="block pt-0.5 pb-1.5 text-text-primary">Celebrated & Award Winning</span>
       <span data-line className="block pt-0.5 pb-1.5 gold-gradient-text font-semibold">Commercial Investigators</span>
     </h1>
   )

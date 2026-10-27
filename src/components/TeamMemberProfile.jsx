@@ -1,5 +1,6 @@
 import { Reveal, RevealItem, RevealStagger } from './Reveal'
 import { formatHeadingText } from '../lib/headingText'
+import SiteEyebrow from './SiteEyebrow'
 
 export default function TeamMemberProfile({ member }) {
   return (
@@ -25,9 +26,7 @@ export default function TeamMemberProfile({ member }) {
       {member.practiceAreas?.length ? (
         <div className="mt-8 border-t border-white/10 pt-8">
           <Reveal type="fade-up">
-            <p className="text-xs uppercase tracking-[0.28em] text-gold">
-              Representation and services
-            </p>
+            <SiteEyebrow scale="panel">Representation and services</SiteEyebrow>
           </Reveal>
           <ul className="mt-6 space-y-5">
             {member.practiceAreas.map((area) => (

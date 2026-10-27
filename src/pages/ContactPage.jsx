@@ -4,6 +4,7 @@ import InquiryForm from '../components/InquiryForm'
 import { HeadlineReveal, Reveal, RevealImage, RevealLine } from '../components/Reveal'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
+import SiteEyebrow from '../components/SiteEyebrow'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -31,7 +32,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-[1440px] gap-16 px-5 md:grid-cols-2 md:px-8 lg:px-12">
           <div>
             <Reveal type="slide-left">
-              <p className="text-xs uppercase tracking-[0.3em] text-gold">Direct contact</p>
+              <SiteEyebrow scale="section-sm-tight">Direct contact</SiteEyebrow>
             </Reveal>
             <RevealLine className="my-5 max-w-xs" />
             <HeadlineReveal

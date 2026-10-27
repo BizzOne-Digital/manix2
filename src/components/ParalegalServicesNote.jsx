@@ -1,5 +1,6 @@
 import { brand } from '../data/brand'
 import { formatHeadingText } from '../lib/headingText'
+import SiteEyebrow from './SiteEyebrow'
 
 export default function ParalegalServicesNote({ className = '' }) {
   return (
@@ -9,7 +10,7 @@ export default function ParalegalServicesNote({ className = '' }) {
         className,
       ].join(' ')}
     >
-      <p className="text-xs uppercase tracking-[0.25em] text-gold">Paralegal Services</p>
+      <SiteEyebrow scale="panel">Paralegal Services</SiteEyebrow>
       <p className="mt-3 text-base leading-relaxed text-text-muted md:text-[17px]">
         {brand.paralegalIntro}
       </p>

@@ -7,6 +7,7 @@ import ButtonLink from '../components/ButtonLink'
 import { HeadlineReveal, Reveal, RevealImage, RevealItem, RevealLine, RevealStagger } from '../components/Reveal'
 import FounderProfile from '../components/FounderProfile'
 import TeamMemberProfile from '../components/TeamMemberProfile'
+import SiteEyebrow from '../components/SiteEyebrow'
 import { brand } from '../data/brand'
 import { siteImages } from '../data/images'
 import { teamMembers } from '../data/team'
@@ -60,7 +61,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 lg:grid-cols-2 lg:items-center lg:px-12">
           <div>
             <Reveal type="slide-left">
-              <p className="text-xs uppercase tracking-[0.3em] text-gold">Our story</p>
+              <SiteEyebrow scale="section-md-page">Our story</SiteEyebrow>
             </Reveal>
             <RevealLine className="my-5 max-w-xs" />
             <HeadlineReveal
@@ -123,7 +124,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-bg-secondary/90" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 lg:px-12">
           <Reveal type="clip-up">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Values</p>
+            <SiteEyebrow scale="section-sm">Values</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
             className="mt-3 font-display text-[clamp(2rem,3vw,2.75rem)]"
@@ -149,7 +150,7 @@ export default function AboutPage() {
       <section id="team" className="scroll-mt-28 border-b border-white/5 py-20 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-12">
           <Reveal type="clip-up">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Team & Associates</p>
+            <SiteEyebrow scale="section-md-page">Team & Associates</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
             className="mt-3 font-display text-[clamp(2rem,3.5vw,3rem)]"

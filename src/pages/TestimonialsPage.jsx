@@ -16,6 +16,7 @@ import { useTestimonialsContent } from '../hooks/useTestimonialsContent'
 import { siteImages } from '../data/images'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { usePageMeta } from '../hooks/usePageMeta'
+import SiteEyebrow from '../components/SiteEyebrow'
 
 export default function TestimonialsPage() {
   const pageRef = useRef(null)
@@ -89,7 +90,7 @@ export default function TestimonialsPage() {
         <div className="pointer-events-none absolute inset-0 bg-bg-secondary/90" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
           <Reveal type="clip-up">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Service overview</p>
+            <SiteEyebrow scale="section-sm">Service overview</SiteEyebrow>
           </Reveal>
           <HeadlineReveal
             className="mt-3 font-display text-[clamp(2rem,3vw,2.75rem)]"

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import ButtonLink from './ButtonLink'
 import { HeadlineReveal, Reveal, RevealItem, RevealStagger } from './Reveal'
 import { brand } from '../data/brand'
+import SiteEyebrow from './SiteEyebrow'
 import { useServicesContent } from '../hooks/useServicesContent'
 
 export default function WhatWeDoBanner() {
@@ -14,7 +15,7 @@ export default function WhatWeDoBanner() {
     >
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
         <Reveal type="fade-up">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">What We Do</p>
+          <SiteEyebrow scale="banner">What We Do</SiteEyebrow>
         </Reveal>
         <HeadlineReveal
           className="mt-3 max-w-full font-display text-[clamp(1.125rem,2.75vw,2.875rem)] leading-[1.2] whitespace-nowrap"

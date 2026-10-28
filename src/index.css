@@ -41,10 +41,42 @@
     background-color: var(--color-bg-main);
     color: var(--color-text-primary);
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: 1.125rem;
+    line-height: 1.72;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
+  }
+
+  /* Larger paragraphs & UI copy; display headings / gold eyebrows keep their own sizes */
+  #root :where(p, li, dd, label, textarea, input, select, option, blockquote, td, th, address) {
+    font-size: 1.125rem;
+    line-height: 1.72;
+  }
+
+  #root p.text-sm,
+  #root li.text-sm {
+    font-size: 1.0625rem;
+  }
+
+  @media (min-width: 768px) {
+    #root :where(p, li).text-base {
+      font-size: 1.1875rem;
+    }
+  }
+
+  #root :where(p, span, li, label).text-xs {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  #root header nav :where(p, span, a) {
+    font-size: 1.0625rem;
+  }
+
+  @media (min-width: 768px) {
+    #root header nav :where(p, span, a) {
+      font-size: 1.125rem;
+    }
   }
 
   #root {
